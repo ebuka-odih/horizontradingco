@@ -76,7 +76,7 @@
                     <i class="fa fa-download" aria-hidden="true"></i>  Withdraw</a>
             </li>
             <li>
-                <a href="?a=deposit_list">
+                <a href="{{ route('user.plans') }}">
                     <i class="fa fa-money" aria-hidden="true"></i>  Invest</a>
             </li>
 

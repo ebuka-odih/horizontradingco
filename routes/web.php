@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DepositController;
+use App\Http\Controllers\InvestmentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -28,7 +29,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     Route::post('process/deposit', [DepositController::class, 'processDeposit'])->name('processDeposit');
     Route::patch('process/payment', [DepositController::class, 'processPayment'])->name('processPayment');
 
-
+    Route::get('investment/plan', [InvestmentController::class, 'plans'])->name('plans');
 });
 
 
