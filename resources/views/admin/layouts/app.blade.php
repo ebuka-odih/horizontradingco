@@ -119,12 +119,12 @@
                         </a>
                         <ul class="nav-main-submenu">
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_comp_chat.html">
+                                <a class="nav-main-link" href="{{ route('admin.package.create') }}">
                                     <span class="nav-main-link-name">Add Package</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="be_comp_onboarding.html">
+                                <a class="nav-main-link" href="{{ route('admin.package.index') }}">
                                     <span class="nav-main-link-name">List Package</span>
                                 </a>
                             </li>
