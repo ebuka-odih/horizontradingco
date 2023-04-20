@@ -30,6 +30,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'user', 'as' => 'user.'], fu
     Route::patch('process/payment', [DepositController::class, 'processPayment'])->name('processPayment');
 
     Route::get('investment/plan', [InvestmentController::class, 'plans'])->name('plans');
+    Route::post('invest/plan', [InvestmentController::class, 'processInvest'])->name('processInvest');
+    Route::get('investment/details/{id}', [InvestmentController::class, 'investmentDetails'])->name('investmentDetails');
 });
 
 

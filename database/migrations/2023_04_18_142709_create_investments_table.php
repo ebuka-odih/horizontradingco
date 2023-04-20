@@ -16,6 +16,11 @@ return new class extends Migration
         Schema::create('investments', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->bigInteger('user_id');
+            $table->bigInteger('package_id');
+            $table->double('amount');
+            $table->integer('status')->default(0);
+            $table->boolean('completed')->default(false);
         });
     }
 

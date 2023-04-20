@@ -32,39 +32,47 @@
 
         <br>
 
-        <form method="post" name="spendform"><input type="hidden" name="form_id" value="16818278853525"><input type="hidden" name="form_token" value="f75868c6bc201888b17327dd409a3c6b">
-            <input type="hidden" name="a" value="deposit">
+        <form method="post" name="spendform" action="{{ route('user.processInvest') }}">
+            @csrf
             <br>
             @foreach($plans as $item)
 
-            <table cellspacing="1" cellpadding="2" border="0" width="100%" class="tab">
-                <tbody><tr>
-                    <th colspan="3">
-                        <input type="radio" name="h_id" value="1"  onclick="updateCompound()">
-                        <b>{{ $item->name }}</b>
-                    </th>
-                </tr><tr>
-                    <td class="inheader">Plan</td>
-                    <td class="inheader" width="200">Spent Amount ($)</td>
-                    <td class="inheader" width="100" nowrap=""><nobr>Daily Profit (%)</nobr></td>
-                </tr>
-                <tr>
-                    <td class="item">{{ $item->name }}</td>
-                    <td class="item" align="right">${{ $item->min_deposit.".00" }} - $19999.00</td>
-                    <td class="item" align="right">2.00</td>
-                </tr>
-                <tr>
-                    <td colspan="3" align="right"><a href="javascript:openCalculator('1')">Calculate your profit &gt;&gt;</a></td>
-                </tr>
-                </tbody></table><br><br>
+                <div class="table-responsive">
+                    <table cellspacing="1" cellpadding="2" border="0" width="100%" class="tab">
+                        <tbody>
+                        <tr>
+                            <th colspan="4">
+                                <input type="radio" name="h_id" value="1"  onclick="updateCompound()">
+                                <b>{{ $item->name }}</b>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td class="inheader">Plan</td>
+                            <td class="inheader" width="200">Spent Amount ($)</td>
+                            <td class="inheader" width="100" nowrap=""><nobr>Daily Profit (%)</nobr></td>
+                            <td class="inheader" width="100" nowrap=""><nobr>Term (Days)</nobr></td>
+                        </tr>
+
+                        <tr>
+                            <td class="item">{{ $item->name }}</td>
+                            <td class="item" align="right">${{ $item->min_deposit.".00" }} - ${{ $item->max_deposit.".00" }}</td>
+                            <td class="item" align="right">{{ $item->daily_interest }}</td>
+                            <td class="item" align="right">{{ $item->term_days }}</td>
+                        </tr>
+                        <input type="hidden" name="package_id" value="{{ $item->id }}">
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <br><br>
             @endforeach
-            <script>cps[1]=[];</script>
 
 
             <table cellspacing="0" cellpadding="2" border="0" class="blank">
                 <tbody><tr>
                     <td>Your account balance ($):</td>
-                    <td align="right">$0</td>
+                    <td align="right">$ {{ auth()->user()->balance ? : '0.00' }}</td>
                 </tr>
                 <tr><td>&nbsp;</td>
                     <td align="right">
@@ -73,7 +81,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Amount to Spend ($):</td>
+                    <td>Enter Amount to Spend ($):</td>
                     <td align="right"><input type="text" name="amount" value="100.00" class="inpts" size="15" style="
  text-align: right;
     background-color: #353054;
@@ -82,41 +90,23 @@
     padding: 5px;
     outline: none;"></td>
                 </tr>
-                <tr id="coumpond_block" style="display:none">
-                    <td>Compounding(%):</td>
-                    <td align="right">
-                        <select name="compound" class="inpts" id="compound_percents"></select>
-                    </td>
+                <tr>
+                   <td colspan="3">
+                       @if(session()->has('declined'))
+                           <div class="alert alert-danger">
+                               {{ session()->get('declined') }}
+                           </div>
+                       @endif
+                       @if(session()->has('insufficient'))
+                           <div class="alert alert-danger">
+                               {{ session()->get('insufficient') }}
+                           </div>
+                       @endif
+                   </td>
                 </tr>
 
                 <tr>
-                    <td colspan="2">
-                        <table cellspacing="0" cellpadding="2" border="0">
-                            <tbody><tr>
-                                <td><input type="radio" name="type" value="process_1006" checked=""></td>
-                                <td>Spend funds from Bitcoin</td>
-                            </tr>
-                            <tr>
-                                <td><input type="radio" name="type" value="process_1007"></td>
-                                <td>Spend funds from Ethereum</td>
-                            </tr>
-                            <tr>
-                                <td><input type="radio" name="type" value="process_1008"></td>
-                                <td>Spend funds from Tether USDT (TRC20)</td>
-                            </tr>
-                            <tr>
-                                <td><input type="radio" name="type" value="process_1009"></td>
-                                <td>Spend funds from Tether USDT (ERC20)</td>
-                            </tr>
-                            <tr>
-                                <td><input type="radio" name="type" value="process_1010"></td>
-                                <td>Spend funds from Doge Coin</td>
-                            </tr>
-                            </tbody></table>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2"><input type="submit" value="Spend" class="sbmt"></td>
+                    <td colspan="2"><input type="submit" value="Invest" class="sbmt"></td>
                 </tr></tbody></table>
         </form>
 

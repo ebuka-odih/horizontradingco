@@ -133,7 +133,8 @@
                                 <td><input type="radio" name="type" value="process_1010"></td>
                                 <td>Spend funds from Doge Coin</td>
                             </tr>
-                            </tbody></table>
+                            </tbody>
+                        </table>
                     </td>
                 </tr>
                 <tr>

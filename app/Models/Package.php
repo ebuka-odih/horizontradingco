@@ -9,4 +9,10 @@ class Package extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    public function total_return()
+    {
+        return $this->daily_interest * $this->term_days;
+    }
+
+
 }
