@@ -41,14 +41,15 @@
                 <tbody><tr>
                     <th colspan="3">
                         <input type="radio" name="h_id" value="1"  onclick="updateCompound()">
-                        <b{{ $item->name }}</b></th>
+                        <b>{{ $item->name }}</b>
+                    </th>
                 </tr><tr>
                     <td class="inheader">Plan</td>
                     <td class="inheader" width="200">Spent Amount ($)</td>
                     <td class="inheader" width="100" nowrap=""><nobr>Daily Profit (%)</nobr></td>
                 </tr>
                 <tr>
-                    <td class="item">Plan 1</td>
+                    <td class="item">{{ $item->name }}</td>
                     <td class="item" align="right">${{ $item->min_deposit.".00" }} - $19999.00</td>
                     <td class="item" align="right">2.00</td>
                 </tr>

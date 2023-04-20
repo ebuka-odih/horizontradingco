@@ -14,7 +14,8 @@
                         <h1 class="animated fadeInLeft">HorizontradingCo Ltd</h1>
                         <h5 class="animated fadeInUp">Global Crypto/Stocks Broker.</h5>
                         <div class="slider-btn">
-                            <div class="animated inner-btn fadeInUp"><a href="portfolio/register.html" class="btn btn-slider">Get Started!</a></div>
+
+                            <div class="animated inner-btn fadeInUp"><a href="{{ route('register') }}" class="btn btn-slider">Get Started!</a></div>
                         </div>
                     </div>
                 </div>
@@ -24,7 +25,7 @@
                         <h1 class="animated fadeInLeft">Trade, Invest and Mine Bitcoin</h1>
                         <h5 class="animated fadeInUp">Using Our expert traders.</h5>
                         <div class="slider-btn">
-                            <div class="animated inner-btn fadeInUp"><a href="portfolio/register.html" class="btn btn-slider">Get Started!</a></div>
+                            <div class="animated inner-btn fadeInUp"><a href="{{ route('register') }}" class="btn btn-slider">Get Started!</a></div>
                         </div>
                     </div>
                 </div>
@@ -34,7 +35,7 @@
                         <h1 class="animated fadeInLeft">Disciplined Investment Strategy</h1>
                         <h5 class="animated fadeInUp">Trusted With Consistent Returnss.</h5>
                         <div class="slider-btn">
-                            <div class="animated inner-btn fadeInUp"><a href="portfolio/register.html" class="btn btn-slider">Get Started!</a></div>
+                            <div class="animated inner-btn fadeInUp"><a href="{{ route('register') }}" class="btn btn-slider">Get Started!</a></div>
                         </div>
                     </div>
                 </div>
@@ -472,7 +473,7 @@
                                 Free company branded car(SUV).<br>
                                 And other incentives.</i><br>
                             Contact support for further enquires.</p>
-                        <p><a class="btn btn-custom" href="indexcca3-2cca3.html?a=signup" role="button">Join Us</a></p>
+                        <p><a class="btn btn-custom" href="{{ route('register') }}" role="button">Join Us</a></p>
                     </div>
                 </div>
                 <div class="col-lg-6"><br>
