@@ -45,12 +45,12 @@ class InvestmentController extends Controller
     {
 
         $deposit_detail = Investment::whereUserId(auth()->id())->findOrFail($id);
-        $investment_plan = Package::findOrFail($deposit_detail->package_id);
+        $package = Package::findOrFail($deposit_detail->package_id);
         $user = User::findOrFail($deposit_detail->user_id);
-        $expected_profit = $investment_plan->total_return()  * $deposit_detail->amount;
+        $expected_profit = $package->total_return()  * $deposit_detail->amount;
         $profit =  number_format((float)$expected_profit / 100, 2, '.', '');
 
-        $expected_percent = $investment_plan->daily_interest  * $deposit_detail->amount;
+        $expected_percent = $package->daily_interest  * $deposit_detail->amount;
         $profit_percent =  number_format((float)$expected_percent / 100, 2, '.', '');
 
         $days = 1;
@@ -59,10 +59,10 @@ class InvestmentController extends Controller
         $d_approved = Carbon::parse($deposit_detail->approved_date);
         $d_ended = Carbon::parse($deposit_detail->end_date);
 
-        if($d_approved->diffInDays($current_date) < $investment_plan->term_days){
+        if($d_approved->diffInDays($current_date) < $package->term_days){
             $days = $d_approved->diffInDays($current_date);
         }else {
-            $days =  $investment_plan->term_days;
+            $days =  $package->term_days;
         }
 
         $i = 1;
@@ -71,7 +71,7 @@ class InvestmentController extends Controller
         }
 
 
-        return view('dashboard.invest.investment-details', compact('deposit_detail', 'investment_plan', 'profit', 'days', 'i'));
+        return view('dashboard.invest.investment-details', compact('deposit_detail', 'package', 'profit', 'days', 'i'));
 
     }
 
