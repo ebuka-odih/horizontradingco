@@ -1,446 +1,357 @@
+
 <!DOCTYPE html>
-<html lang="en">
-
-<!-- Mirrored from digitachainx.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Jun 2022 04:27:57 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<html lang="en-US" class="no-js">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- metas -->
-    <meta charset="utf-8">
-    <meta name="author" content=" {{ env('APP_NAME') }}" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="keywords" content="blockchain, Forex, FX, Crypto, Cryptos, Cryptocurrencies, Stock, Stocks, Bonds, Invest, Investment, Equity" />
-    <meta name="description" content=" {{ env('APP_NAME') }} is an investment firm committed to exceptional returns for investors through actively managed portfolios of these blockchain assets." />
+    <!-- ==============================================
+    TITLE AND META TAGS
+    =============================================== -->
 
-    <!-- title  -->
-    <title> {{ env('APP_NAME') }} | Blockchain Investment Company</title>
+    <title>HorizontradingCo.com</title>
 
-    <!-- favicon -->
-    <link rel="shortcut icon" href="asset/images/favicon_1647610748.png">
-    <link rel="apple-touch-icon" href="asset/images/favicon_1647610748.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="asset/images/favicon_1647610748.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="asset/images/favicon_1647610748.png">
+    <meta name="description" content="The premise of HorizontradingCo Ltd itself is that it grants open to investors, access to digital currency investment that offers a highly profitable investment return for everyone. By performing a wide range of operations, HorizontradingCo Ltd makes a profit from different diversified sources.">
+    <meta name="keywords" content="HorizontradingCo, HorizontradingCo Ltd">
+    <meta name="author" content="forex trade">
 
-    <!-- plugins -->
-    <link rel="stylesheet" href="{{ asset('assets/miner/css/plugins.css') }}" />
+    <!-- ==============================================
+    FAVICON
+    =============================================== -->
+    <link rel="shortcut icon" href="img/master/favicon.png">
 
-    <!-- revolution slider css -->
-    <link rel="stylesheet" href="{{ asset('assets/miner/css/rev_slider/settings.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/miner/css/rev_slider/layers.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/miner/css/rev_slider/navigation.css') }}">
-
-    <!-- search css -->
-    <link rel="stylesheet" href="{{ asset('assets/miner/search/search.css') }}" />
-
-    <!-- quform css -->
-    <link rel="stylesheet" href="{{ asset('assets/miner/quform/css/base.css') }}">
-
-    <!-- custom css -->
-    <link href="{{ asset('assets/miner/css/styles.css') }}" rel="stylesheet" id="colors">
-    <style>
-        #google_translate_element {
-
-            color: transparent;
-        }
-
-        #google_translate_element a {
-
-            display: none;
-        }
-
-        select.google_translate_element {
-
-            color: black;
-        }
-
-        div.goog-te-gadget {
-
-            color: transparent;
-        }
-
-        div.goog-te-gadget {
-
-            color: transparent !important;
-        }
+    <!-- ==============================================
+    CSS
+    =============================================== -->
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <!--    <link rel="stylesheet" href="css/navbar.css"> -->
+    <link rel="stylesheet" href="{{ asset('css/stylesheet.css') }}">
+    <!--     <link rel="stylesheet" href="css/responsive.css">  -->
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.html">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <script src="js/modernizr-custom.html"></script>
 
 
-    </style>
+
+    <!--Start of Tawk.to Script-->
+
+    <!--End of Tawk.to Script-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/topnav.css">
+    <!--Start of Tawk.to Script-->
+
+
+{{--    <script type="text/javascript" id="hs-script-loader" async defer src="http://js-eu1.hs-scripts.com/26226386.js"></script>--}}
+    <!-- End of HubSpot Embed Code -->
+
+    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="85be6d13-b652-43bb-a5a3-c1fe6c8f0d4d";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 
 </head>
 
+
 <body>
+<style>
+    .navbar {
+        border-radius: 50px;
+        background-color: #14213D;
+        position: relative;
+        z-index: 999;
+        top: -5px;
+    }
 
-<!-- start page loading -->
-<div id="preloader">
-    <div class="row loader">
-        <div class="loader-icon"></div>
-    </div>
+    .pc_navbar_nav a {
+        font-size: 14px;
+        font-family:'Poppins', sans-serif;
+        color: #fff;
+    }
+
+    .pc_navbar_nav a:hover {
+        font-size: 14px;
+        font-family:'Poppins', sans-serif;
+        color: #000;
+        border-bottom: 2px inset #9BC53D;
+    }
+
+
+    .mobile_nav {
+        border-radius: 10px;
+        background-color: #14213D;
+        position: relative;
+        z-index: 999;
+        top: -15px;
+    }
+
+    .mobile_navbar_nav a {
+        font-size: 14px;
+        font-family:'Poppins', sans-serif;
+        color: #fff;
+    }
+
+    .mobile_navbar_nav a:hover {
+        font-size: 14px;
+        font-family:'Poppins', sans-serif;
+        color: #000;
+        border-bottom: 2px inset #000;
+    }
+
+</style>
+<div class="loader-wrapper">
+    <div class="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
 </div>
-<!-- end page loading -->
 
-<!-- start main-wrapper section -->
-<div class="main-wrapper">
-    <!-- TradingView Widget BEGIN -->
-    <div class="tradingview-widget-container">
-        <div class="tradingview-widget-container__widget"></div>
-        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+        {
+            "symbols": [
             {
-                "symbols": [
-                {
-                    "description": "Amazon",
-                    "proName": "NASDAQ:AMZN"
-                },
-                {
-                    "description": "Facebook",
-                    "proName": "NASDAQ:FB"
-                },
-                {
-                    "description": "Alphabet",
-                    "proName": "NASDAQ:GOOGL"
-                },
-                {
-                    "description": "Apple",
-                    "proName": "NASDAQ:AAPL"
-                },
-                {
-                    "description": "Mircosoft",
-                    "proName": "NASDAQ:MSFT"
-                },
-                {
-                    "description": "BTC/USD",
-                    "proName": "COINBASE:BTCUSD"
-                },
-                {
-                    "description": " \tAlibaba Group Holding",
-                    "proName": " \tNYSE:BABA"
-                },
-                {
-                    "description": " \tBerkshire Hathaway",
-                    "proName": " \tNYSE:BRK.B"
-                },
-                {
-                    "description": " \tJPMorgan Chase",
-                    "proName": " \tNYSE:JPM"
-                },
-                {
-                    "description": "ETH/USD",
-                    "proName": "KRAKEN:ETHUSD"
-                },
-                {
-                    "description": " \tJohnson & Johnson",
-                    "proName": " \tNYSE:JNJ"
-                },
-                {
-                    "description": " \tExxon Mobil",
-                    "proName": " \tNYSE:XOM"
-                },
-                {
-                    "description": " \tRoyal Dutch Shell",
-                    "proName": " \tNYSE:RDS.A"
-                },
-                {
-                    "description": " \tBank of America",
-                    "proName": " \tNYSE:BAC"
-                },
-                {
-                    "description": "XRP/USD",
-                    "proName": "BITFINEX:XRPUSD"
-                }
-            ],
-                "colorTheme": "dark",
-                "isTransparent": false,
-                "displayMode": "compact",
-                "locale": "en"
+                "proName": "FOREXCOM:SPXUSD",
+                "title": "S&P 500"
+            },
+            {
+                "proName": "FOREXCOM:NSXUSD",
+                "title": "US 100"
+            },
+            {
+                "proName": "FX_IDC:EURUSD",
+                "title": "EUR/USD"
+            },
+            {
+                "proName": "BITSTAMP:BTCUSD",
+                "title": "Bitcoin"
+            },
+            {
+                "proName": "BITSTAMP:ETHUSD",
+                "title": "Ethereum"
+            }
+        ],
+            "showSymbolLogo": true,
+            "colorTheme": "dark",
+            "isTransparent": false,
+            "displayMode": "adaptive",
+            "locale": "en"
+        }
+    </script>
+</div>
+<!-- TradingView Widget END -->
+<div class=""><center>
+        <div id="google_translate_element"></div>
+
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
             }
         </script>
-    </div>
-    <!-- TradingView Widget END -->
+
+        <script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    </center>
+</div>
 
 
-    <!-- start header section -->
-    <header class="header-style1 menu_area-light">
-        <div id="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-9 col-xs-12">
-                        <div class="top-bar-info">
-                            <ul>
-                                <li><i class="fas fa-envelope"></i>support@affluent-coinfx.com</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-md-3 xs-display-none">
-                        <ul class="top-social-icon">
+<style>
+    .navbar {
+        border-radius: 50px;
+        background-color: #14213D;
+        position: relative;
+        z-index: 999;
+        top: -5px;
+    }
 
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    .pc_navbar_nav a {
+        font-size: 14px;
+        font-family:'Poppins', sans-serif;
+        color: #fff;
+    }
+
+    .pc_navbar_nav a:hover {
+        font-size: 14px;
+        font-family:'Poppins', sans-serif;
+        color: #000;
+        border-bottom: 2px inset #9BC53D;
+    }
+
+
+    .mobile_nav {
+        border-radius: 10px;
+        background-color: #14213D;
+        position: relative;
+        z-index: 999;
+        top: -15px;
+    }
+
+    .mobile_navbar_nav a {
+        font-size: 14px;
+        font-family:'Poppins', sans-serif;
+        color: #fff;
+    }
+
+    .mobile_navbar_nav a:hover {
+        font-size: 14px;
+        font-family:'Poppins', sans-serif;
+        color: #000;
+        border-bottom: 2px inset #000;
+    }
+
+</style>
+<div class=""><center><div id="google_translate_element"></div></center></div>
+<div class="container my-0 mt-2 d-none d-lg-block">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a href="{{  route('index') }}" class="nav-brand">
+            <h2 style="font-weight: bolder; color: white">HorizontradingCo</h2>
+{{--            <img src="logo3.png" alt="" style="height:45px;background-color:white;border-radius:20px"  class="img-fluid">--}}
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav pc_navbar_nav ml-auto">
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('index') }}">HOME <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{{ route('about') }}">ABOUT</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="faqs">QUESTION GUIDE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{{ route('login') }}">LOG IN</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{{ route('register') }}">SIGN UP</a>
+                </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link text-white" href="contact-us.html">CONTACT</a>--}}
+{{--                </li>--}}
+            </ul>
         </div>
+    </nav>
+</div>
 
-        <div class="navbar-default">
+<div class="container px-0 my-0 mt-2 d-lg-none d-sm-block">
+    <nav class="navbar mobile_nav navbar-expand-lg navbar-dark">
+        <a href="{{ route('index') }}" class="nav-brand">
+            <h3 style="color:white; font-weight: bolder">HorizontradingCo</h3>
+{{--            <img src="logo3.png" alt="" style="height:45px;background-color:white;border-radius:20px" class="img-fluid">--}}
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="font-size: 14px; "></span>
+        </button>
 
-            <!-- start top search -->
-            <div class="top-search bg-theme">
-                <div class="container">
-                    <form class="search-form" action="#" method="GET" accept-charset="utf-8">
-                        <div class="input-group">
-                        <span class="input-group-addon cursor-pointer">
-                            <button class="search-form_submit fas fa-search font-size18 text-white" type="submit"></button>
-                        </span>
-                            <input type="text" class="search-form_input form-control" name="s" autocomplete="off" placeholder="Type & hit enter...">
-                            <span class="input-group-addon close-search"><i class="fas fa-times font-size18 line-height-28 margin-5px-top"></i></span>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <!-- end top search -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mobile_navbar_nav ml-auto">
 
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-12 col-lg-12">
-                        <div class="menu_area alt-font">
-                            <nav class="navbar navbar-expand-lg navbar-light no-padding">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('index') }}">HOME <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{{ route('about') }}">ABOUT</a>
+                </li>
 
-                                <div class="navbar-header navbar-header-custom">
-                                    <!-- start logo -->
-                                    <a href="{{ route('index') }}" class="navbar-brand logo2">
-                                        <h3 style="font-weight: bolder; color: #FD5240"> {{ env('APP_NAME') }}</h3>
-{{--                                        <img id="logo" src="asset/images/logo_1647610732.png" alt="logo">--}}
-                                    </a>
-                                    <!-- end logo -->
-                                    <div id="google_translate_element"></div>
-                                    <script>
-                                        function googleTranslateElementInit() {
-                                            new google.translate.TranslateElement({
-                                                pageLanguage: 'en'
-                                            }, 'google_translate_element');
-                                        }
-                                    </script>
-
-                                </div>
-
-                                <div class="navbar-toggler"></div>
-
-                                <!-- menu area -->
-                                <ul class="navbar-nav ml-auto" id="nav" style="display: none;">
-                                    <li><a href="{{ route('index') }}">Home</a></li>
-
-                                    <li><a href="{{ route('pricing') }}">Pricing</a></li>
-
-                                    <li><a href="{{ route('about') }}">About Us</a></li>
-                                    <li><a href="{{ route('register') }}"><span class="btn-style2 small theme">JOIN NOW</span></a></li>
-                                </ul>
-                                <!-- end menu area -->
-
-                                <!-- start attribute navigation -->
-                                <div class="attr-nav sm-no-margin sm-margin-70px-right xs-margin-65px-right">
-                                    <span class="sm-margin-20px-right xs-margin-5px-right">
-                                        <a href="{{ route('login') }}" class="btn-style2 small theme">
-                                            <!-- <i class="fa fa-user-circle">Account</i> -->
-                                            <span>LOGIN</span>
-                                        </a>
-                                    </span>
-                                    <!-- <li class="search"><a href="javascript:void(0)"><i class="fas fa-search"></i></a></li> -->
-                                </div>
-                                <!-- end attribute navigation -->
-
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{{ route('faqs') }}">QUESTION GUIDE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{{ route('login') }}">LOG IN</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{{ route('register') }}">SIGN UP</a>
+                </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link text-white" href="contact-us.html">CONTACT</a>--}}
+{{--                </li>--}}
+            </ul>
         </div>
+    </nav>
+</div>
 
-    </header>
-    <!-- end header section -->
 
 
-    @yield('content')
 
-    <!-- start footer section -->
-    <footer class="bg-img background-size-cover" data-overlay-dark="9" data-background="https://digitachainx.com/assets/miner/img/bg/footer-bga.jpg">
+@yield('content')
+</body>
+
+    <footer>
         <div class="container">
             <div class="row">
-
-                <div class="col-lg-4 col-md-6 sm-margin-50px-bottom xs-margin-30px-bottom">
-                    <div class="padding-30px-right border-right xs-border-bottom xs-no-border-right  border-color-light-white xs-padding-30px-bottom xs-no-padding-right height-100">
-                        <h3 class="footer-title-style7 text-white">Contact Us</h3>
-                        <ul class="footer-list">
-                            <li>
-                                <span class="d-inline-block vertical-align-top font-size18"><i class="fas fa-map-marker-alt text-theme-color"></i></span>
-                                <span class="d-inline-block width-85 vertical-align-top padding-10px-left">47 Nungua Link Road 2nd Floor,
-                                Bigboss,England</span>
-                            </li>
-
-                            <li>
-                                <span class="d-inline-block vertical-align-top font-size18"><i class="far fa-envelope text-theme-color"></i></span>
-                                <span class="d-inline-block width-85 vertical-align-top padding-10px-left">support@affluent-coinfx.com</span>
-                            </li>
-
+                <div class="col-lg-4">
+                    <div class="footer-col">
+                        <figure class="footer-logo">  <a href="#" class="nav-brand"><img src="logo3.png" alt="" style="height:45px;background-color:white;border-radius:20px"  class="img-fluid"></a></figure>
+                        <p>We are a digital assets trading and managment company, providing smart investment products to investors, who wish to create financial stabilty and security through secure investing. </p>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="footer-col">
+                        <h5>Links</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i>  &nbsp; <a href="index-2.html">Home</a></li>
+                            <li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i>  &nbsp; <a href="about-us.html">About us</a></li>
+                            <li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i>  &nbsp; <a href="faqs.html">Faq</a></li>
+                            <li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i>  &nbsp; <a href="contact-us.html">Contact</a></li>
                         </ul>
-                        <div class="footer-social-icons small margin-15px-top">
-                            <ul>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="footer-col">
+                        <h5></h5>
+                        <div class="location-box">
+                            <figure class="bottom-location-icon"><img src="img/master/location-footer.png" alt=""></figure>
 
-                            </ul>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-4 col-md-6 sm-margin-50px-bottom xs-margin-30px-bottom">
-                    <div class="padding-30px-right sm-no-padding-right border-right xs-border-bottom sm-no-border-right border-color-light-white xs-padding-30px-bottom height-100">
-                        <h3 class="footer-title-style7 text-white">Newsletter</h3>
-                        <p class="margin-20px-bottom">You can subscribe to our free newsletter to stay updated with information anf offers from  {{ env('APP_NAME') }}</p>
-                        <form class="quform newsletter-form w-sm-90 mx-auto mx-lg-0" action="#" method="post" enctype="multipart/form-data" onclick="">
-
-                            <div class="quform-elements">
-
-                                <div class="row">
-
-                                    <!-- Begin Text input element -->
-                                    <div class="col-md-12">
-                                        <div class="quform-element">
-                                            <div class="quform-input">
-                                                <input class="form-control" id="email_address" type="text" name="email_address" placeholder="Subscribe with  {{ env('APP_NAME') }}" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Text input element -->
-
-                                    <!-- Begin Submit button -->
-                                    <div class="col-md-12">
-                                        <div class="quform-submit-inner">
-                                            <button class="btn btn-white text-theme-color m-0" type="submit"><i class="fas fa-paper-plane"></i></button>
-                                        </div>
-                                        <div class="quform-loading-wrap"><span class="quform-loading"></span></div>
-                                    </div>
-                                    <!-- End Submit button -->
-
-                                </div>
-
-                            </div>
-
-                        </form>
-                    </div>
-
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="height-100">
-                        <h3 class="footer-title-style7 text-white">About Us</h3>
-                        <p class="margin-20px-bottom"> {{ env('APP_NAME') }} is a company involved in a blockchain assets hedge fund.</p>
-                        <p class="margin-20px-bottom">The company invests in cryptocurrency protocols and companies.</p>
-                        <a href="{{ route('about') }}" class="butn theme white-hover small"><span>Read More</span></a>
+                <div class="col-lg-4">
+                    <div class="footer-col last-col">
+                        <h5>NEWSLETTER</h5>
+                        <p>Suscribe to our newsletter and get the lastest scoop right to your inbox!</p>
+                        <div class="newsletter-box">
+                            <form  action="#" method="post" name="sign-up"><input type="hidden" name="form_id" value="16505203773043"><input type="hidden" name="form_token" value="d4ba86517209195a3af61c6d2178fd9b">
+                                <input type="email" class="input" id="email" name="email" placeholder="Your email address" required>
+                                <input type="submit" class="button" id="submit" value="SIGN UP">
+                            </form>
+                        </div>
+                        <p class="cursive">Your email is safe with us, we don't spam.</p>
                     </div>
                 </div>
             </div>
-
-        </div>
-
-        <div class="footer-bar bg-transparent border-top border-color-light-white position-relative z-index-1">
-            <div class="container">
-                <p>&copy;
-                    <script>
-                        document.write(new Date().getFullYear())
-                    </script>  {{ env('APP_NAME') }}</p>
+            <hr class="footer">
+            <div class="bottom-footer">
+                <div class="copytight">
+                    <p>Copyright © 2020-2023 by  Forex Trading Capital Ltd | All rights reserved</p>
+                </div>
             </div>
         </div>
     </footer>
-    <!-- end footer section -->
 
-</div>
-<!-- end main-wrapper section -->
+    <a href="#0" class="cd-top">Top</a>
+    <!-- ==============================================
+    JAVASCRIPTS
+    =============================================== -->
+    <script src="{{ asset('js/plugins.js') }}"></script>
+    <script src="{{ asset('js/finnexia.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
-<!-- start scroll to top -->
-<a href="#!" class="scroll-to-top"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
-<!-- end scroll to top -->
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+</script>
 
-<!-- all js include start -->
-
-<!-- jquery -->
-<script src="{{ asset('assets/miner/js/jquery.min.js') }}"></script>
-
-<!-- popper js -->
-<script src="{{ asset('assets/miner/js/popper.min.js') }}"></script>
-
-<!-- bootstrap -->
-<script src="{{ asset('assets/miner/js/bootstrap.min.js') }}"></script>
-
-<!-- navigation -->
-<script src="{{ asset('assets/miner/js/nav-menu.js') }}"></script>
-
-<!-- serch -->
-<script src="{{ asset('assets/miner/search/search.js') }}"></script>
-
-<!-- tab -->
-<script src="{{ asset('assets/miner/js/easy.responsive.tabs.js') }}"></script>
-
-<!-- owl carousel -->
-<script src="{{ asset('assets/miner/js/owl.carousel.js') }}"></script>
-
-<!-- jquery.counterup.min -->
-<script src="{{ asset('assets/miner/js/jquery.counterup.min.js') }}"></script>
-
-<!-- stellar js -->
-<script src="{{ asset('assets/miner/js/jquery.stellar.min.js') }}"></script>
-
-<!-- waypoints js -->
-<script src="{{ asset('assets/miner/js/waypoints.min.js') }}"></script>
-
-<!-- countdown js -->
-<script src="{{ asset('assets/miner/js/countdown.js') }}"></script>
-
-<!-- jquery.magnific-popup js -->
-<script src="{{ asset('assets/miner/js/jquery.magnific-popup.min.js') }}"></script>
-
-<!-- isotope.pkgd.min js -->
-<script src="{{ asset('assets/miner/js/isotope.pkgd.min.js') }}"></script>
-
-<!--  chart js -->
-<script src="{{ asset('assets/miner/js/chart.min.js') }}"></script>
-
-<!-- thumbs js -->
-<script src="{{ asset('assets/miner/js/owl.carousel.thumbs.js') }}"></script>
-
-<!-- animated js -->
-<script src="{{ asset('assets/miner/js/animated-headline.js') }}"></script>
-
-<!--  clipboard js -->
-<script src="{{ asset('assets/miner/js/clipboard.min.js') }}"></script>
-
-<!--  prism js -->
-<script src="{{ asset('assets/miner/js/prism.js') }}"></script>
-
-<!-- revolution slider js files start -->
-<script src="{{ asset('assets/miner/js/rev_slider/jquery.themepunch.tools.min.js') }}"></script>
-<script src="{{ asset('assets/miner/js/rev_slider/jquery.themepunch.revolution.min.js') }}"></script>
-<script src="{{ asset('assets/miner/js/rev_slider/extensions/revolution.extension.actions.min.js') }}"></script>
-<script src="{{ asset('assets/miner/js/rev_slider/extensions/revolution.extension.carousel.min.js') }}"></script>
-<script src="{{ asset('assets/miner/js/rev_slider/extensions/revolution.extension.kenburn.min.js') }}"></script>
-<script src="{{ asset('assets/miner/js/rev_slider/extensions/revolution.extension.layeranimation.min.js') }}"></script>
-<script src="{{ asset('assets/miner/js/rev_slider/extensions/revolution.extension.migration.min.js') }}"></script>
-<script src="{{ asset('assets/miner/js/rev_slider/extensions/revolution.extension.navigation.min.js') }}"></script>
-<script src="{{ asset('assets/miner/js/rev_slider/extensions/revolution.extension.parallax.min.js') }}"></script>
-<script src="{{ asset('assets/miner/js/rev_slider/extensions/revolution.extension.slideanims.min.js') }}"></script>
-<script src="{{ asset('assets/miner/js/rev_slider/extensions/revolution.extension.video.min.js') }}"></script>
-
-<!-- custom scripts -->
-<script src="{{ asset('assets/miner/js/main.js') }}"></script>
-
-<!-- quform plugins js -->
-<script src="{{ asset('assets/miner/quform/js/plugins.js') }}"></script>
-
-<!-- quform scripts js -->
-<script src="{{ asset('assets/miner/quform/js/scripts.js') }}"></script>
-
-<!-- all js include end -->
-
-<script src="//code.jivosite.com/widget/TzMcqSGn8K" async></script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-
-</body>
-
-<!-- Mirrored from digitachainx.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Jun 2022 04:29:33 GMT -->
+<!-- Mirrored from forextradingcapitalltd.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 10 Nov 2022 20:51:26 GMT -->
 </html>
