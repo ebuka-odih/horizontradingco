@@ -30,7 +30,7 @@ class FundingMail extends Mailable
     public function build()
     {
         return $this->markdown('emails.fundingmail')
-            ->from('noreply@affluent-coinfx.com', "Affluent CoinFX")
-            ->subject('Affluent CoinFX');
+            ->subject(env('APP_NAME'))
+            ->from(env('MAIL_FROM_NAME', 'APP_NAME'));
     }
 }

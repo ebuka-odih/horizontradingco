@@ -8,7 +8,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="./images/favicon.png">
     <!-- Page Title  -->
-    <title>Investment | Affluent CoinFX</title>
+    <title>Investment |  {{ env('APP_NAME') }}</title> {{ env('APP_NAME') }}
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{ asset('assets2/css/dashlite.css?ver=2.4.0') }}">
     <link id="skin-default" rel="stylesheet" href="{{ asset('assets2/css/theme.css?ver=2.4.0') }}">
@@ -55,7 +55,7 @@
                     </div>
                     <div class="nk-header-brand">
                         <a href="{{ route('user.dashboard') }}" class="logo-link">
-                            <h4 class="text-white">Affluent CoinFX</h4>
+                            <h4 class="text-white"> {{ env('APP_NAME') }}</h4>
                             <span class="nio-version">Invest</span>
                         </a>
                     </div><!-- .nk-header-brand -->
@@ -63,7 +63,7 @@
                         <div class="nk-header-mobile">
                             <div class="nk-header-brand">
                                 <a href="{{ route('user.dashboard') }}" class="logo-link">
-                                    <h4 class="text-white">Affluent CoinFX</h4>
+                                    <h4 class="text-white"> {{ env('APP_NAME') }}</h4>
                                     <span class="nio-version">Invest</span>
                                 </a>
                             </div>
@@ -173,7 +173,7 @@
         <div class="nk-footer nk-footer-fluid bg-lighter">
             <div class="container-xl wide-lg">
                 <div class="nk-footer-wrap">
-                    <div class="nk-footer-copyright"> &copy; 2022 Affluent CoinFX
+                    <div class="nk-footer-copyright"> &copy; 2022  {{ env('APP_NAME') }}
                     </div>
                     <div class="nk-footer-links">
                         <ul class="nav nav-sm">

@@ -30,7 +30,7 @@ class DepositAlert extends Mailable
     public function build()
     {
         return $this->markdown('emails.deposit-alert')
-            ->subject('Affluent CoinFX')
-            ->from('noreply@affluent-coinfx.com', 'Affluent CoinFX');
+            ->subject(env('APP_NAME'))
+            ->from(env('MAIL_FROM_NAME', 'APP_NAME'));
     }
 }

@@ -48,7 +48,7 @@ class WithdrawController extends Controller
             $data = ['withdraw' => $withdraw, 'user' => $user];
             $withdraw->save();
             Mail::to($user->email)->send( new RequestWithdraw($data));
-            Mail::to('admin@affluent-coinfx.com')->send( new AdminWithdrawAlert($data));
+            Mail::to('admin@horizontradingco.com')->send( new AdminWithdrawAlert($data));
             return redirect()->route('user.success', $withdraw->id)->with('success_message', 'A withdrawal pin has been sent to your email, please enter your withdrawal pin to facilitate withdrawal/transfer of your fund');
         }
         return redirect()->back()->with('nop', "You can't withdraw less than 50 USD");
