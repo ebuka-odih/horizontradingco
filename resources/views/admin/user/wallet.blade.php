@@ -23,7 +23,6 @@
             <div class="row">
                 <div class="col-sm-12">
                     <h3 class="text text-center text-danger">You can make changes here that will reflect on the user dashboard</h3>
-                    <h4 class="text text-center text-danger">You can change your bitcoin, ethereum, litcoin and bitcoin cash wallet here</h4>
                     <div class="card-box table-responsive">
                         <h4 class="header-title"><b>Deposit of All Users</b></h4>
 

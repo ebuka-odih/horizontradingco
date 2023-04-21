@@ -1,0 +1,95 @@
+{
+	font-family: 'gill', sans-serif;
+	font-size: 30px;
+	line-height: 0.75;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+	color: #242424;
+}
+.logo_line_1 span
+{
+	color: #ffa800;
+	font-weight: bold;
+}
+.logo_line_2
+{
+	font-size: 11px;
+	color: #909090;
+	margin-top: -1px;
+	padding-left: 1px;
+}
+.logo_img
+{
+	position: absolute;
+	left: 0;
+	top: -10px;
+	width: 57px;
+	height: 38px;
+}
+.logo_img img
+{
+	max-width: 100%;
+}
+
+
+
+/* begin Footer */
+.art-Footer
+{
+	 
+	z-index:0;
+	overflow: auto;
+	margin: 0px auto 0px auto;
+	bottom:0;
+	left:0;
+
+	
+}
+
+
+.art-Footer .art-Footer-inner
+{
+	z-index: 0;
+	padding: 15px;
+	text-align: center;
+	bottom:0;
+
+}
+ 
+
+.art-Footer .art-Footer-text p
+{
+	margin: 0;
+}
+
+.art-Footer .art-Footer-text
+{
+	display:inline-block;
+	color:black;
+	font-family: Georgia, "Times New Roman", Times, Serif;
+}
+
+.art-Footer .art-Footer-text a:link
+{
+	text-decoration: none;
+	color: black;
+	font-family: Georgia, "Times New Roman", Times, Serif;
+	text-decoration: none;
+}
+
+.art-Footer .art-Footer-text a:visited
+{
+	text-decoration: none;
+	color: black;
+	font-family: Georgia, "Times New Roman", Times, Serif;
+	text-decoration: none;
+}
+
+.art-Footer .art-Footer-text a:hover
+{
+	text-decoration: none;
+	color: #1F8BB2;
+	font-family: Georgia, "Times New Roman", Times, Serif;
+	text-decoration: none;
+}
+/* end Footer */

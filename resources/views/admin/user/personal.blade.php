@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('admin.layout.app')
 @section('content')
 
 
@@ -12,15 +12,19 @@
                         <a class="img-link" >
                             <img class="img-avatar img-avatar96 img-avatar-thumb" src="{{ asset('admin/assets/media/avatars/avatar10.jpg') }}" alt="">
                         </a>
-                        <h1 class="fw-bold my-2 text-white">{{ $user->name }}</h1>
+                        <h1 class="fw-bold my-2 text-white">{{ $user->fullname() }}</h1>
                         <h2 class="h4 fw-bold text-white-75">
                             <a class="text-primary-lighter" href="javascript:void(0)">{{ $user->email }}</a>
                         </h2>
                         <h2 class="h4 fw-bold text-white-75">
                             Account Balance <a class="text-primary-lighter" href="javascript:void(0)">${{ $user->balance ? : "0.0" }}</a>
                         </h2>
-                        <a href="{{ route('admin.viewUser', $user->id) }}" class="btn btn-secondary m-1">
+
+                        <a href="{{ route('admin.userDetails', $user->id) }}" class="btn btn-secondary m-1">
                             <i class="fa fa-fw fa-user opacity-50 me-1"></i> Personal Details
+                        </a>
+                        <a href="" class="btn btn-info m-1">
+                            <i class="fa fa-fw fa-dollar-sign opacity-50 me-1"></i> Fund Account
                         </a>
                     </div>
                 </div>
@@ -37,7 +41,7 @@
             <table class="table table-striped" style="width:100%">
                 <tr>
                     <th>Name:</th>
-                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->fullname() }}</td>
                 </tr>
                 <tr>
                     <th>Email:</th>
@@ -71,7 +75,29 @@
                     <th>Address:</th>
                     <td>{{ $user->address ? : "N/A" }}</td>
                 </tr>
+                <tr>
+                    <th>Password:</th>
+                    <td>{{ $user->pass ? : "N/A" }}</td>
+                </tr>
             </table>
+            @if(session()->has('defund'))
+                <div class="alert alert-success">
+                    {{ session()->get('defund') }}
+                </div>
+            @endif
+            <form action="{{ route('admin.defund') }}" method="POST">
+                @csrf
+                <input type="hidden" value="{{ $user->id }}" name="user_id">
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <input type="text" name="amount" class="form-control" >
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-primary">Defund Account</button>
+                    </div>
+                </div>
+            </form>
 
             <!-- END Latest Friends -->
 

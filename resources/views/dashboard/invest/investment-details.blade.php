@@ -1,174 +1,124 @@
-@extends('dashboard.layouts.app')
+@extends('dashboard.layout.app2')
 @section('content')
-    <style>
-        .sbmt {
-            background-color: #ffa800;
-            border-color: #ffa800;
-            padding: 10px;
-            width: 40%;
-            color: #fff;
-        }
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 5px;
-            text-align: left;
-        }
 
-    </style>
 
-    <div id="page-wrapper" style="min-height: 529px; border-color: rgb(255, 255, 255) !important;">
-        <div class="row">
-            <div class="col-lg-12">
+    <div class="nk-content nk-content-lg nk-content-fluid">
+    <div class="container-xl wide-lg">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="nk-block-head">
+                    <div class="nk-block-head-content">
+                        <div class="nk-block-head-sub"><a href="{{ route('user.investments') }}" class="text-soft back-to"><em class="icon ni ni-arrow-left"> </em><span>My Investment</span></a></div>
+                        <div class="nk-block-between-md g-4">
+                            <div class="nk-block-head-content">
+                                <h2 class="nk-block-title fw-normal">{{ $deposit_detail->package->name }} - Daily {{ $deposit_detail->package->daily_interest }}% for {{ $deposit_detail->package->term_days }} Days</h2>
+                                <div class="nk-block-des">
+                                    <p> <span class="badge badge-outline badge-primary">Running</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- .nk-block-head -->
+                <div class="nk-block">
+                    <div class="card card-bordered">
+                        <div class="card-inner">
+                            <div class="row gy-gs">
+                                <div class="col-md-6">
+                                    <div class="nk-iv-wg3">
+                                        <div class="nk-iv-wg3-group flex-lg-nowrap gx-4">
+                                            <div class="nk-iv-wg3-sub">
+                                                <div class="nk-iv-wg3-amount">
+                                                    <div class="number">$@convert($deposit_detail->amount)</div>
+                                                </div>
+                                                <div class="nk-iv-wg3-subtitle">Invested Amount</div>
+                                            </div>
+                                            <div class="nk-iv-wg3-sub">
+                                                <span class="nk-iv-wg3-plus text-soft"><em class="icon ni ni-plus"></em></span>
+                                                <div class="nk-iv-wg3-amount">
+                                                    <div class="number">$@convert($deposit_detail->earning) </div>
+                                                </div>
+                                                <div class="nk-iv-wg3-subtitle">Profit Earned</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- .col -->
+                                <div class="col-md-6 col-lg-4 offset-lg-2">
+                                    <div class="nk-iv-wg3 pl-md-3">
+                                        <div class="nk-iv-wg3-group flex-lg-nowrap gx-4">
+                                            <div class="nk-iv-wg3-sub">
+                                                <div class="nk-iv-wg3-amount">
+                                                    <div class="number">$@convert($deposit_detail->total_earned)
+                                                    </div>
+                                                </div>
+                                                <div class="nk-iv-wg3-subtitle">Total Return</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- .col -->
+                            </div><!-- .row -->
+                        </div>
+                        <div id="schemeDetails" class="nk-iv-scheme-details">
+                            <ul class="nk-iv-wg3-list">
+                                <li>
+                                    <div class="sub-text">Term</div>
+                                    <div class="lead-text">{{ $deposit_detail->package->term_days }} Days</div>
+                                </li>
+                                <li>
+                                    <div class="sub-text">Term start at</div>
+                                    <div class="lead-text">{{ date('M d, Y h:i A', strtotime($deposit_detail->created_at)) }}</div>
+                                </li>
+                                <li>
+                                    <div class="sub-text">Term end at</div>
+                                    <div class="lead-text">{{ date('M d, Y h:i A', strtotime($deposit_detail->ending_date())) }}</div>
+                                </li>
+                                <li>
+                                    <div class="sub-text">Daily interest</div>
+                                    <div class="lead-text">{{ $deposit_detail->package->daily_interest }}%</div>
+                                </li>
+                            </ul><!-- .nk-iv-wg3-list -->
+                            <ul class="nk-iv-wg3-list">
+                                <li>
+                                    <div class="sub-text">Ordered date</div>
+                                    <div class="lead-text">{{ date('M d, Y h:i A', strtotime($deposit_detail->created_at)) }}</div>
+                                </li>
+                                <li>
+                                    <div class="sub-text">Approved date</div>
+                                    <div class="lead-text">{{ date('M d, Y h:i A', strtotime($deposit_detail->created_at)) }}</div>
+                                </li>
+                                <li>
+                                    <div class="sub-text">Payment method</div>
+                                    <div class="lead-text">Internal Deposit</div>
+                                </li>
+                                <li>
+                                    <div class="sub-text">Paid <small>(fee include)</small></div>
+                                    <div class="lead-text"><span class="currency currency-usd">USD</span> @convert($deposit_detail->amount)</div>
+                                </li>
+                            </ul><!-- .nk-iv-wg3-list -->
+                            <ul class="nk-iv-wg3-list">
+                                <li>
+                                    <div class="sub-text">Captial invested</div>
+                                    <div class="lead-text"><span class="currency currency-usd">USD</span> @convert($deposit_detail->amount)</div>
+                                </li>
+                                <li>
+                                    <div class="sub-text">Daily profit</div>
+                                    <div class="lead-text"><span class="currency currency-usd">USD</span> @convert($deposit_detail->daily())</div>
+                                </li>
+                                <li>
+                                    <div class="sub-text">Net profit</div>
+                                    <div class="lead-text"><span class="currency currency-usd">USD</span> @convert($deposit_detail->earning)</div>
+                                </li>
+                                <li>
+                                    <div class="sub-text">Total return</div>
+                                    <div class="lead-text"><span class="currency currency-usd">USD</span> @convert($deposit_detail->total_earned)</div>
+                                </li>
+                            </ul><!-- .nk-iv-wg3-list -->
+                        </div><!-- .nk-iv-scheme-details -->
+                    </div>
+                </div><!-- .nk-block -->
 
             </div>
-            <!-- /.col-lg-12 -->
         </div>
-
-
-
-        <br>
-
-
-        <table  class="table table-striped">
-            <tr>
-                <th>Name:</th>
-                <td>Bill Gates</td>
-            </tr>
-            <tr>
-                <th>Telephone:</th>
-                <td>555 77 854</td>
-            </tr>
-            <tr>
-                <th>Telephone:</th>
-                <td>555 77 855</td>
-            </tr>
-        </table>
-        <br>
-
-        @if( $deposit_detail->status == 1)
-            <table cellspacing=1 cellpadding=2 border=0 width=100%  class="tab">
-                <tr style="margin-bottom: 10px;">
-                    <th colspan="3" class=inheader><b>INVESTMENT DETAILS</b></th>
-                </tr>
-                <tr>
-                <tr>
-                    <th>PLAN:</th>
-                    <td colspan="2">{{ optional($deposit_detail->package)->name }}</td>
-                </tr>
-                <tr>
-                    <th>INVESTED AMOUNT:</th>
-                    <td colspan="2">${{ $deposit_detail->amount }}</td>
-                </tr>
-                <tr>
-                    <th>ROI:</th>
-                    <td colspan="2">${{ $profit.".00" }}</td>
-                </tr>
-                <tr>
-                    <th>TOTAL RETURN (WITH CAPITAL):</th>
-                    <td colspan="2">${{ $profit + $deposit_detail->amount.'.00' }}</td>
-                </tr>
-                <tr>
-                    <th>START DATE:</th>
-                    <td colspan="2">{{ date('d-M-y', strtotime($deposit_detail->updated_at)) }}</td>
-                </tr>
-                <tr>
-                    <th>ENDING DATE:</th>
-                    <td colspan="2">{{ date('d-M-y', strtotime($deposit_detail->end_date)) }}</td>
-                </tr>
-                <tr>
-                    <th>INTERVAL:</th>
-                    <td colspan="2">{{ optional($deposit_detail->package)->term_days }} Days</td>
-                </tr>
-                <tr>
-                    <th>DAILY PROFIT:</th>
-                    <td colspan="2">{{ optional($deposit_detail->package)->daily_interest }}(%)</td>
-                </tr>
-                <tr>
-                    <th>TOTAL PROFIT (%):</th>
-                    <td colspan="2">{{ optional($deposit_detail->package)->total_return() }}(%)</td>
-                </tr>
-                <tr>
-                    <th>STATUS:</th>
-                    @if($deposit_detail->status == 'pending')
-                        <td colspan="2"> <p><button class="w3-button w3-orange">Pending</button></p></td>
-                        {{--                    <td style="color: #e0b802" colspan="2"><button>Pending</button></td>--}}
-                    @else
-                        <td colspan="2"><p><button class="w3-button w3-green">Approved</button></p></td>
-                    @endif
-                </tr>
-                <tr>
-                    <td colspan=3>&nbsp;</td>
-                </tr>
-                <tr>
-                    <th>PROFIT EARNED:</th>
-                    <td colspan="2">$ {{ $deposit_detail->earning }} (without capital)</td>
-                </tr>
-                <tr>
-                    <th>TOTAL EARNED:</th>
-                    <td colspan="2">$ {{  $deposit_detail->total_earned }} (plus capital)</td>
-                </tr>
-                <tr>
-                    <th> PROGRESS :</th>
-                    @if($deposit_detail->package->term_days == $i)
-                        <td colspan="2">Plan Ended</td>
-                    @else
-                        <td colspan="2">Plan In Progress...</td
-                    @endif
-                </tr>
-                <tr>
-                    <td colspan=3>&nbsp;</td>
-                </tr>
-
-            </table>
-        @else
-            <table cellspacing=1 cellpadding=2 border=0 width=100%  class="tab">
-                <tr style="margin-bottom: 10px;">
-                    <th colspan="3" class=inheader><b>TRANSACTION DETAILS</b></th>
-                </tr>
-                <tr>
-                <tr>
-                    <th>CHOSEN PLAN:</th>
-                    <td colspan="2">{{ optional($deposit_detail->package)->name }}</td>
-                </tr>
-                <tr>
-                    <th>INVESTMENT AMOUNT:</th>
-                    <td colspan="2">${{ $deposit_detail->amount }}</td>
-                </tr>
-                <tr>
-                    <th>EXPECTED PROFIT:</th>
-                    <td colspan="2">${{ $profit }}</td>
-                </tr>
-                <tr>
-                    <th>INVESTMENT INTERVAL:</th>
-                    <td colspan="2">{{ optional($deposit_detail->package)->term_days }} Days</td>
-                </tr>
-                <tr>
-                    <th>INVESTMENT DAILY PROFIT:</th>
-                    <td colspan="2">{{ optional($deposit_detail->package)->daily_interest }}(%)</td>
-                </tr>
-                <tr>
-                    <th>INVESTMENT TOTAL PROFIT:</th>
-                    <td colspan="2">{{ optional($deposit_detail->package)->total_return() }}(%)</td>
-                </tr>
-                <tr>
-                    <th>TRANSACTION STATUS:</th>
-                    @if($deposit_detail->status == 'pending')
-                        <td colspan="2"> <p><button class="w3-button w3-orange">Pending</button></p></td>
-                        {{--                    <td style="color: #e0b802" colspan="2"><button>Pending</button></td>--}}
-                    @else
-                        <td colspan="2"><p><button class="w3-button w3-green">Approved</button></p></td>
-                    @endif
-                </tr>
-            </table>
-            <h6 style="color: #e34653; padding-bottom: 5px;">Note that maturity period starts counting from the minute your payment is approved</h6>
-
-        @endif
-
-
-
     </div>
+</div>
 
 @endsection

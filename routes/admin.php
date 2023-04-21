@@ -1,32 +1,45 @@
 <?php
 
-
-use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\AdminDepositController;
-use App\Http\Controllers\Admin\AdminPackageController;
-use App\Http\Controllers\Admin\AdminPaymentWalletController;
-use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'admin', 'as' => 'admin.'], function(){
-    Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 
-    Route::get('users', [UserController::class, 'users'])->name('users');
-    Route::get('user/details/{id}', [UserController::class, 'viewUser'])->name('viewUser');
-    Route::get('verify/user/{id}', [UserController::class, 'verifyUser'])->name('verifyUser');
-    Route::get('delete/user/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
+Route::group(['middleware' => ['auth', 'verified', 'admin'], 'prefix' => 'admin', 'as' => 'admin.'], function(){
+    Route::get('dashboard', "Admin\AdminController@dashboard")->name('dashboard');
+    Route::get('referrals', "Admin\AdminController@referrals")->name('referrals');
+    Route::get('security', "Admin\AdminController@security")->name('security');
+    Route::post('security', "Admin\AdminController@storePassword")->name('storePassword');
+    Route::post('defund/account/', 'Admin\AdminController@defund')->name('defund');
 
-    Route::resource('payment-wallet', AdminPaymentWalletController::class);
 
-    Route::get('transactions/deposits', [AdminDepositController::class, 'deposits'])->name('deposits');
-    Route::post('store/deposit', [AdminDepositController::class, 'storeDeposit'])->name('storeDeposit');
-    Route::get('deposit/details', [AdminDepositController::class, 'depositDetails'])->name('deposit.details');
-    Route::get('approve/deposit/{id}', [AdminDepositController::class, 'approveDeposit'])->name('approveDeposit');
-    Route::delete('delete/deposit/{id}', [AdminDepositController::class, 'deleteDeposit'])->name('deleteDeposit');
+    Route::get('user/details/{id}', "Admin\UserController@userDetails")->name('userDetails');
+    Route::get('users', 'Admin\UserController@users')->name('users');
+    Route::delete('delete/user', 'Admin\UserController@deleteUser')->name('deleteUser');
+    Route::get('add-wallet', "Admin\UserController@wallet")->name('wallet');
+    Route::post('add-wallet', "Admin\UserController@storeWallet")->name('storeWallet');
 
-    Route::resource('package', AdminPackageController::class);
+    Route::get('user/withdrawal/method/{id}', "Admin\UserController@userWithdrawMethod")->name('userWithdrawMethod');
+    Route::delete('delete/user/{id}', "Admin\UserController@deleteUser")->name('deleteUser');
 
+
+    Route::get('deposits', "Admin\AdminDeposit@deposits")->name('deposit');
+    Route::get('view/deposits', "Admin\AdminDeposit@view_deposit")->name('view_deposit');
+    Route::get('approve/deposit/{id}', "Admin\AdminDeposit@approve_deposit")->name('approve_deposit');
+    Route::delete('delete/deposit/{id}', "Admin\AdminDeposit@deleteDeposit")->name('deleteDeposit');
+
+    
+
+    // Withdrawal Route
+    Route::get('withdrawals', "Admin\AdminWithdraw@withdrawal")->name('withdrawal');
+    Route::get('approve/withdrawal/{id}', "Admin\AdminWithdraw@approve_withdrawal")->name('approve_withdrawal');
+    Route::delete('delete/withdrawal/{id}', "Admin\AdminWithdraw@delete_withdrawal")->name('delete_withdrawal');
+
+    Route::resource('package', "Admin\PackageController");
+
+    // Funding Route
+    Route::get('fund/user', "Admin\FundingController@fund")->name('fund');
+    Route::post('fund/user', "Admin\FundingController@sendFund")->name('sendFund');
+
+    Route::resource('wallet', "Admin\PaymentMethodController");
 
 
 });

@@ -1,119 +1,117 @@
-@extends('dashboard.layouts.app')
+@extends('dashboard.layout.app2')
 @section('content')
-    <style>
-        .sbmt {
-            background-color: #ffa800;
-            border-color: #ffa800;
-            padding: 10px;
-            width: 40%;
-            color: #fff;
-        }
-    </style>
 
-    <div id="page-wrapper" style="min-height: 529px; border-color: rgb(255, 255, 255) !important;">
-        <div class="row">
-            <div class="col-lg-12">
+<div class="nk-content nk-content-lg nk-content-fluid">
+    <div class="container-xl wide-lg">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="nk-block-head text-center">
+                    <div class="nk-block-head-content">
+                        <div class="nk-block-head-sub"><span>Choose an Option</span></div>
+                        <div class="nk-block-head-content">
+                            <h2 class="nk-block-title fw-normal">Investment Plan</h2>
+                            <div class="nk-block-des">
+                                <p>Choose your investment plan and start earning.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- nk-block -->
+                <div class="nk-block">
+                    <form action="{{ route('user.processInvest') }}" method="POST" class="plan-iv">
+                    @csrf
 
+                        <div class="plan-iv-list nk-slider nk-slider-s2">
+                            <ul class="plan-list slider-init" data-slick='{"slidesToShow": 3, "slidesToScroll": 1, "infinite":false, "responsive":[
+						{"breakpoint": 992,"settings":{"slidesToShow": 2}},
+						{"breakpoint": 768,"settings":{"slidesToShow": 1}}
+					]}'>
+                                @foreach($plans as $item)
+                                    <li class="plan-item">
+                                        <input type="radio" id="{{ $item->id }}" name="package_id" value="{{ $item->id }}" class="plan-control" required>
+                                        <div class="plan-item-card">
+                                            <div class="plan-item-head">
+                                                <div class="plan-item-heading">
+                                                    <h4 class="plan-item-title card-title title">{{ $item->name }}</h4>
+                                                    <p class="sub-text">Enjoy entry level of invest & earn money.</p>
+                                                </div>
+                                                <div class="plan-item-summary card-text">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <span class="lead-text">{{ $item->daily_interest }}%</span>
+                                                            <span class="sub-text">Daily Interest</span>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <span class="lead-text">{{ $item->term_days }}</span>
+                                                            <span class="sub-text">Term Days</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="plan-item-body">
+                                                <div class="plan-item-desc card-text">
+                                                    <ul class="plan-item-desc-list">
+                                                        <li><span class="desc-label">Min Deposit</span> - <span class="desc-data">$@convert($item->min_deposit)</span></li>
+                                                        <li><span class="desc-label">Max Deposit</span> - <span class="desc-data">$@convert($item->max_deposit)</span></li>
+                                                        <li><span class="desc-label">Deposit Return</span> - <span class="desc-data">Yes</span></li>
+                                                        <li><span class="desc-label">Total Return</span> - <span class="desc-data">{{ $item->total_return() }}%</span></li>
+                                                    </ul>
+                                                    <div class="plan-item-action">
+                                                        <label for="{{ $item->id }}" class="plan-label">
+                                                            <span class="plan-label-base">Choose this plan</span>
+                                                            <span class="plan-label-selected">Plan Selected</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li><!-- .plan-item -->
+                                @endforeach
+
+                            </ul><!-- .plan-list -->
+
+
+                            <div class="buysell-field form-group mt-2">
+                                <div class="form-label-group">
+                                    <label class="form-label text-center" for="buysell-amount">Enter Amount to Invest</label>
+                                </div>
+                                <div class="nk-block-des">
+                                    <p class="text-danger">Note: This will be deducted from your main balance</p>
+                                </div>
+                                <br>
+                                @if(session()->has('declined'))
+                                    <div class="alert alert-danger">
+                                        {{ session()->get('declined') }}
+                                    </div>
+                                @endif
+                                @if(session()->has('insufficient'))
+                                    <div class="alert alert-danger">
+                                        {{ session()->get('insufficient') }}
+                                    </div>
+                                @endif
+                                <div class="form-control-group">
+                                    <input type="text" class="form-control form-control-lg form-control-number" id="buysell-amount" name="amount" placeholder="100">
+                                    <div class="form-dropdown">
+                                        <div class="text">USD</div>
+                                    </div>
+
+                                </div>
+                                <div class="form-note-group">
+                                    <span class="buysell-min form-note-alt">Account Balance $@convert(auth()->user()->balance)</span>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="plan-iv-actions text-center">
+                            <button type="submit" class="btn btn-primary btn-lg"> <span>Continue to Invest</span> <em class="icon ni ni-arrow-right"></em></button>
+                        </div>
+                    </form>
+                </div><!-- nk-block -->
             </div>
-            <!-- /.col-lg-12 -->
         </div>
-
-
-
-        <br>
-
-
-
-
-        <script language="javascript">function openCalculator(id){w=225;h=400;t=(screen.height-h-30)/2;l=(screen.width-w-30)/2;window.open('?a=calendar&type='+id,'calculator'+id,"top="+t+",left="+l+",width="+w+",height="+h+",resizable=1,scrollbars=0");for(i=0;i<document.spendform.h_id.length;i++){if(document.spendform.h_id[i].value==id){document.spendform.h_id[i].checked=true;}}}function updateCompound(){var id=0;var tt=document.spendform.h_id.type;if(tt&&tt.toLowerCase()=='hidden'){id=document.spendform.h_id.value;}else{for(i=0;i<document.spendform.h_id.length;i++){if(document.spendform.h_id[i].checked){id=document.spendform.h_id[i].value;}}}var cpObj=document.getElementById('compound_percents');if(cpObj){while(cpObj.options.length!=0){cpObj.options[0]=null;}}if(cps[id]&&cps[id].length>0){document.getElementById('coumpond_block').style.display='';for(i in cps[id]){cpObj.options[cpObj.options.length]=new Option(cps[id][i]);}}else{document.getElementById('coumpond_block').style.display='none';}}var cps={};</script>
-
-
-
-
-        <br>
-
-        <form method="post" name="spendform" action="{{ route('user.processInvest') }}">
-            @csrf
-            <br>
-            @foreach($plans as $item)
-
-                <div class="table-responsive">
-                    <table cellspacing="1" cellpadding="2" border="0" width="100%" class="tab">
-                        <tbody>
-                        <tr>
-                            <th colspan="4">
-                                <input type="radio" name="h_id" value="1"  onclick="updateCompound()">
-                                <b>{{ $item->name }}</b>
-                            </th>
-                        </tr>
-                        <tr>
-                            <td class="inheader">Plan</td>
-                            <td class="inheader" width="200">Spent Amount ($)</td>
-                            <td class="inheader" width="100" nowrap=""><nobr>Daily Profit (%)</nobr></td>
-                            <td class="inheader" width="100" nowrap=""><nobr>Term (Days)</nobr></td>
-                        </tr>
-
-                        <tr>
-                            <td class="item">{{ $item->name }}</td>
-                            <td class="item" align="right">${{ $item->min_deposit.".00" }} - ${{ $item->max_deposit.".00" }}</td>
-                            <td class="item" align="right">{{ $item->daily_interest }}</td>
-                            <td class="item" align="right">{{ $item->term_days }}</td>
-                        </tr>
-                        <input type="hidden" name="package_id" value="{{ $item->id }}">
-
-                        </tbody>
-                    </table>
-                </div>
-
-                <br><br>
-            @endforeach
-
-
-            <table cellspacing="0" cellpadding="2" border="0" class="blank">
-                <tbody><tr>
-                    <td>Your account balance ($):</td>
-                    <td align="right">$ {{ auth()->user()->balance ? : '0.00' }}</td>
-                </tr>
-                <tr><td>&nbsp;</td>
-                    <td align="right">
-                        <small>
-                        </small>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Enter Amount to Spend ($):</td>
-                    <td align="right"><input type="text" name="amount" value="100.00" class="inpts" size="15" style="
- text-align: right;
-    background-color: #353054;
-    color: #fff;
-    border-color: #353054;
-    padding: 5px;
-    outline: none;"></td>
-                </tr>
-                <tr>
-                   <td colspan="3">
-                       @if(session()->has('declined'))
-                           <div class="alert alert-danger">
-                               {{ session()->get('declined') }}
-                           </div>
-                       @endif
-                       @if(session()->has('insufficient'))
-                           <div class="alert alert-danger">
-                               {{ session()->get('insufficient') }}
-                           </div>
-                       @endif
-                   </td>
-                </tr>
-
-                <tr>
-                    <td colspan="2"><input type="submit" value="Invest" class="sbmt"></td>
-                </tr></tbody></table>
-        </form>
-
-        <script language="javascript">for(i=0;i<document.spendform.type.length;i++){if((document.spendform.type[i].value.match(/^process_/))){document.spendform.type[i].checked=true;break;}}updateCompound();</script>
-
-
-
     </div>
+</div>
 
 @endsection

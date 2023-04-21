@@ -29,8 +29,8 @@ class ApproveDeposit extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.approve_deposit')
-            ->subject(env('APP_NAME'))
-            ->from(env('MAIL_FROM_ADDRESS', env('APP_NAME')));
+        return $this->markdown('emails.approveDeposit')
+            ->subject('Affluent CoinFX')
+            ->from('noreply@affluent-coinfx.com');
     }
 }

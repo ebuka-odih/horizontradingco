@@ -1,13 +1,16 @@
-@extends('admin.layouts.app')
+@extends('admin.layout.app')
 @section('content')
+
 
     <main id="main-container">
 
         <!-- Hero -->
-        <div class="bg-body-light">
-            <div class="content content-full">
-                <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
-                    <h1 class="flex-grow-1 fs-3 fw-semibold my-2 my-sm-3">All Withdrawal</h1>
+        <div class="content">
+            <div class="d-md-flex justify-content-md-between align-items-md-center py-3 pt-md-3 pb-md-0 text-center text-md-start">
+                <div>
+                    <h1 class="h3 mb-1">
+                        All Withdrawal
+                    </h1>
                 </div>
             </div>
         </div>
@@ -15,80 +18,70 @@
 
         <!-- Page Content -->
         <div class="content">
-            <!-- Full Table -->
             <div class="block block-rounded">
+                <div class="block-header block-header-default">
+                    <div class="block-content block-content-full">
+                        <!-- DataTables init on table by adding .js-dataTable-full class, functionality is initialized in js/pages/be_tables_datatables.min.js which was auto compiled from _js/pages/be_tables_datatables.js -->
+                        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
 
-                <div class="block-content">
-
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-striped table-vcenter">
-                            <thead>
-                            <tr>
-                                <th class="text-center" >
-                                    <i class="far fa-user"></i>
-                                </th>
-                                <th>Amount</th>
-                                <th>Payment Method</th>
-                                <th>Status</th>
-                                <th class="text-center" style="width: 100px;">Actions</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($withdrawal as $item)
-                                <tr>
-                                    <td class="text-center">
-                                        <a href="be_pages_generic_profile.html"> {{ $item->user->name }}</a>
-                                    </td>
-                                    <td class="fw-semibold">
-                                        ${{ $item->amount }}
-                                    </td>
-                                    <td>
-                                        {{ $item->wallet_name }}
-                                    </td>
-                                    <td>
-                                        {!! $item->adminStatus() !!}
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="btn-group">
-                                            <a href="{{ route('admin.approveDeposit', $item->id) }}" class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" >
-                                                <i class="fa fa-check"></i>
-                                            </a>
-                                            <form method="POST" action="{!! route('admin.deleteDeposit', $item->id) !!}" accept-charset="UTF-8">
-                                                <input name="_method" value="DELETE" type="hidden">
-                                                {{ csrf_field() }}
-
-                                                <div class="btn-group btn-group-xs pull-right" role="group">
-                                                    <button type="submit" class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="" data-bs-original-title="Delete" onclick="return confirm(&quot;Delete Package?&quot;)">
-                                                        <i class="fa fa-times"></i>
-                                                    </button>
-
-                                                </div>
-
-                                            </form>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    @if(session()->has('success'))
+                                        <div class="alert alert-success">
+                                            {{ session()->get('success') }}
                                         </div>
-                                    </td>
-                                </tr>
-                            @endforeach
+                                    @endif
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped table-vcenter js-dataTable-full dataTable no-footer" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
+                                            <thead>
+                                            <tr>
+                                                <th class="text-center sorting sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="#: activate to sort column descending">Date</th>
+                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending">User</th>
+                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending">Amount</th>
+                                                {{--                                            <th class="d-none d-sm-table-cell sorting"  tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Payment Detail</th>--}}
+                                                <th  class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Registered: activate to sort column ascending">Status</th>
+                                                <th  class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Registered: activate to sort column ascending">Action</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            @foreach($withdrawal as $item)
+                                                <tr class="odd">
+                                                    <td class="fw-semibold"> {{ date('d-M-y', strtotime($item->created_at)) }}</td>
+                                                    <td class="fw-semibold">{{ $item->user->fullname() }} (@convert($item->user['balance']))</td>
+                                                    <td class="fw-semibold">$ {{ $item->amount }}</td>
+                                                    {{--                                                <td class="d-none d-sm-table-cell"> {{ $item->withdraw_method->acctLabel() }}</td>--}}
+                                                    <td class="d-none d-sm-table-cell"> {!! $item->adminStatus() !!}</td>
+                                                    <td>
+                                                        @if($item->status == 0)
+                                                            <a href="{{ route('admin.approve_withdrawal', $item->id) }}" class="btn btn-sm btn-success mb-1">Approve</a>
+                                                        @else
+                                                        @endif
+                                                        <form method="POST" action="{!! route('admin.delete_withdrawal', $item->id) !!}" accept-charset="UTF-8">
+                                                            <input name="_method" value="DELETE" type="hidden">
+                                                            {{ csrf_field() }}
 
-                            </tbody>
-                        </table>
+                                                            <div class="btn-group btn-group-xs pull-right" role="group">
+                                                                <button data-toggle="tooltip" data-placement="top" type="submit" class="btn  btn-sm btn-danger" onclick="return confirm(&quot;Delete Withdrawl?&quot;)">
+                                                                    <span class="fa flaticon-delete" aria-hidden="true"></span>Delete
+                                                                </button>
+                                                            </div>
+
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- END Full Table -->
-
-        </div>
-        <!-- END Page Content -->
+            <!-- END Page Content -->
     </main>
-
 
 @endsection

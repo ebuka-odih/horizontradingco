@@ -29,8 +29,8 @@ class FundingMail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.fundmail')
-            ->subject(env('APP_NAME'))
-            ->from(env('MAIL_FROM_ADDRESS', env('APP_NAME')));
+        return $this->markdown('emails.fundingmail')
+            ->from('noreply@affluent-coinfx.com', "Affluent CoinFX")
+            ->subject('Affluent CoinFX');
     }
 }

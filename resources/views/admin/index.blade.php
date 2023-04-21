@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('admin.layout.app')
 @section('content')
 
 <main id="main-container">
@@ -8,10 +8,13 @@
         <div class="d-md-flex justify-content-md-between align-items-md-center py-3 pt-md-3 pb-md-0 text-center text-md-start">
             <div>
                 <h1 class="h3 mb-1">
-                   Admin Dashboard
+                    Dashboard
                 </h1>
-
+                <p class="fw-medium mb-0 text-muted">
+                    Welcome, Admin
+                </p>
             </div>
+
         </div>
     </div>
     <!-- END Hero -->
@@ -26,18 +29,9 @@
                         <div class="item rounded-3 bg-body mx-auto my-3">
                             <i class="fa fa-users fa-lg text-primary"></i>
                         </div>
-                        <div class="fs-1 fw-bold">2,388</div>
+                        <div class="fs-1 fw-bold">{{ $total_users }}</div>
                         <div class="text-muted mb-3">Registered Users</div>
-                        <div class="d-inline-block px-3 py-1 rounded-pill fs-sm fw-semibold text-success bg-success-light">
-                            <i class="fa fa-caret-up me-1"></i>
-                            19.2%
-                        </div>
-                    </div>
-                    <div class="block-content block-content-full block-content-sm bg-body-light fs-sm">
-                        <a class="fw-medium" href="javascript:void(0)">
-                            View all users
-                            <i class="fa fa-arrow-right ms-1 opacity-25"></i>
-                        </a>
+
                     </div>
                 </div>
             </div>
@@ -47,18 +41,8 @@
                         <div class="item rounded-3 bg-body mx-auto my-3">
                             <i class="fa fa-level-up-alt fa-lg text-primary"></i>
                         </div>
-                        <div class="fs-1 fw-bold">14.6%</div>
-                        <div class="text-muted mb-3">Bounce Rate</div>
-                        <div class="d-inline-block px-3 py-1 rounded-pill fs-sm fw-semibold text-danger bg-danger-light">
-                            <i class="fa fa-caret-down me-1"></i>
-                            2.3%
-                        </div>
-                    </div>
-                    <div class="block-content block-content-full block-content-sm bg-body-light fs-sm">
-                        <a class="fw-medium" href="javascript:void(0)">
-                            Explore analytics
-                            <i class="fa fa-arrow-right ms-1 opacity-25"></i>
-                        </a>
+                        <div class="fs-1 fw-bold">$@convert($deposits)</div>
+                        <div class="text-muted mb-3">Total Deposits</div>
                     </div>
                 </div>
             </div>
@@ -68,18 +52,8 @@
                         <div class="item rounded-3 bg-body mx-auto my-3">
                             <i class="fa fa-chart-line fa-lg text-primary"></i>
                         </div>
-                        <div class="fs-1 fw-bold">386</div>
-                        <div class="text-muted mb-3">Confirmed Sales</div>
-                        <div class="d-inline-block px-3 py-1 rounded-pill fs-sm fw-semibold text-success bg-success-light">
-                            <i class="fa fa-caret-up me-1"></i>
-                            7.9%
-                        </div>
-                    </div>
-                    <div class="block-content block-content-full block-content-sm bg-body-light fs-sm">
-                        <a class="fw-medium" href="javascript:void(0)">
-                            View all sales
-                            <i class="fa fa-arrow-right ms-1 opacity-25"></i>
-                        </a>
+                        <div class="fs-1 fw-bold">$@convert($withdrawal)</div>
+                        <div class="text-muted mb-3">Total Withdrawal</div>
                     </div>
                 </div>
             </div>
@@ -89,26 +63,76 @@
                         <div class="item rounded-3 bg-body mx-auto my-3">
                             <i class="fa fa-wallet fa-lg text-primary"></i>
                         </div>
-                        <div class="fs-1 fw-bold">$4,920</div>
-                        <div class="text-muted mb-3">Total Earnings</div>
-                        <div class="d-inline-block px-3 py-1 rounded-pill fs-sm fw-semibold text-danger bg-danger-light">
-                            <i class="fa fa-caret-down me-1"></i>
-                            0.3%
-                        </div>
-                    </div>
-                    <div class="block-content block-content-full block-content-sm bg-body-light fs-sm">
-                        <a class="fw-medium" href="javascript:void(0)">
-                            Withdrawal options
-                            <i class="fa fa-arrow-right ms-1 opacity-25"></i>
-                        </a>
+                        <div class="fs-1 fw-bold">$@convert($investment)</div>
+                        <div class="text-muted mb-3">Total Investment</div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- END Overview -->
 
+
+        <!-- Latest Orders + Stats -->
+        <div class="row">
+            <div class="col-md-12">
+                <!--  Latest Orders -->
+                <div class="block block-rounded block-mode-loading-refresh">
+                    <div class="block-header block-header-default">
+                        <h3 class="block-title">
+                            Latest Users
+                        </h3>
+
+                    </div>
+                    <div class="block-content">
+                        <table class="table table-striped table-hover table-borderless table-vcenter fs-sm">
+                            <thead>
+                            <tr class="text-uppercase">
+                                <th>Name</th>
+                                <th class="d-none d-xl-table-cell">Joined at</th>
+                                <th>Status</th>
+                                <th class="d-none d-sm-table-cell text-end" style="width: 120px;">Balance</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($users as $item)
+                            <tr>
+                                <td>
+                                    <span class="fw-semibold">{{ $item->fullname() }}</span>
+                                </td>
+                                <td class="d-none d-xl-table-cell">
+                                    <span class="fs-sm text-muted">{{ date('M Y d', strtotime($item->created_at )) }}</span>
+                                </td>
+                                <td>
+                                    <span class="fw-semibold ">{!! $item->status() !!}</span>
+                                </td>
+                                <td class="d-none d-sm-table-cell text-end fw-medium">
+                                    $@convert(auth()->user()->balance)
+                                </td>
+                                <td class="text-center text-nowrap fw-medium">
+                                    <a href="{{ route('admin.userDetails', $item->id) }}">
+                                        View
+                                    </a>
+                                </td>
+                            </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="block-content block-content-full block-content-sm bg-body-light fs-sm text-center">
+                        <a class="fw-medium" href="{{ route('admin.users')}}">
+                            View Users
+                            <i class="fa fa-arrow-right ms-1 opacity-25"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- END Latest Orders -->
+            </div>
+        </div>
+        <!-- END Latest Orders + Stats -->
     </div>
     <!-- END Page Content -->
 </main>
 
 @endsection
+
