@@ -186,6 +186,47 @@
                         </div>
                         <!-- TradingView Widget END -->
                     </div>
+
+                    
+
+                </div>
+                <br><br>
+
+                <div class="section-title">
+					<span class="top-title">PRICING PLANS</span>
+					<h2>Choose From Our Popular Pricing Plan</h2>
+				</div>
+               
+                <div class="row">
+                    
+                    <div class="col-lg-6">
+                        <div class="front-thumbnail">
+                            <figure class="box-pic"><a href="#"><img src="nft.jpg" alt=""></a></figure>
+                            <div class="rounded-circle"><figure class="center-circle-icon"><img src="img/master/cost.png" alt=""></figure> </div>
+                            <div class="figure-caption">
+                                <h4>NFT Token</h4>
+                                <p>
+                                    This portfolio uses a smart contract that gives investors access to earn from our actiuvely traded NFT tokens as well as NFT being traded on the metaverse
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 center-div">
+                        <div class="front-thumbnail">
+                            <figure class="box-pic"><a href="#"><img src="metaverse.jpg" alt=""></a></figure>
+                            <div class="rounded-circle"><figure class="center-circle-icon"><img src="img/master/deal.png" alt=""></figure> </div>
+                            <div class="figure-caption">
+                                <h4>Metaverse Token</h4>
+                                <p>
+                                    This portfolio gives investors oppoturnity to earnpassively from our actively traded metaverse tokens and project with greate utility yielding returns for investor
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    
+
                 </div>
 
 
