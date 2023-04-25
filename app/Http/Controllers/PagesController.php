@@ -9,7 +9,7 @@ class PagesController extends Controller
 {
     public function index()
     {
-        $plans = Package::all();
+        $plans = Package::paginate(2);
         return view('pages.index', compact('plans'));
     }
 }

@@ -1,5 +1,32 @@
 @extends('pages.layout.app')
 @section('content')
+<style>
+    .single-pricing {
+    -webkit-box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 4px;
+    -webkit-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+    margin-bottom: 30px;
+}
+.single-pricing .price-title {
+    border-bottom: 1px solid #e8eff3;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+.single-pricing ul {
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+.single-pricing ul li {
+    list-style-type: none;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 20px;
+}
+</style>
     <div class="carousel">
         <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -198,32 +225,50 @@
 				</div>
                
                 <div class="row">
+                    @foreach($plans as $item)
                     
-                    <div class="col-lg-6">
-                        <div class="front-thumbnail">
-                            <figure class="box-pic"><a href="#"><img src="nft.jpg" alt=""></a></figure>
-                            <div class="rounded-circle"><figure class="center-circle-icon"><img src="img/master/cost.png" alt=""></figure> </div>
-                            <div class="figure-caption">
-                                <h4>NFT Token</h4>
-                                <p>
-                                    This portfolio uses a smart contract that gives investors access to earn from our actiuvely traded NFT tokens as well as NFT being traded on the metaverse
-
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 center-div">
+                    <div class="col-lg-6 ">
                         <div class="front-thumbnail">
                             <figure class="box-pic"><a href="#"><img src="metaverse.jpg" alt=""></a></figure>
-                            <div class="rounded-circle"><figure class="center-circle-icon"><img src="img/master/deal.png" alt=""></figure> </div>
+                            <div class="rounded-circle"><figure class="center-circle-icon">
+                                <img src="https://www.shareicon.net/download/2015/11/24/677320_graphics.svg" alt="">
+                            </figure> </div>
                             <div class="figure-caption">
-                                <h4>Metaverse Token</h4>
-                                <p>
-                                    This portfolio gives investors oppoturnity to earnpassively from our actively traded metaverse tokens and project with greate utility yielding returns for investor
-                                </p>
+                
+                                <div class="single-pricing">
+                                    <div class="price-title">
+                                        <h3>{{ $item->name }}</h3>
+                                        <h2>${{ $item->min_deposit}} - ${{ $item->max_deposit}}</h2>
+                                        <span><b>2% ROI</b> </span>
+                                    </div>
+        
+                                    <ul>
+                                        <li>
+                                            <i class="ri-check-line"></i>
+                                            Duration - {{ $item->term_days }} Days
+                                        </li>
+                                        <li>
+                                            <i class="ri-check-line"></i>
+                                    
+                                        </li>
+                                        <li>
+                                            <i class="ri-check-line"></i>
+                                        10% Referral Bonus
+                                        </li>
+                                        
+                                        <li>
+                                            <i class="ri-check-line"></i>
+                                            24/7 Support
+                                        </li>
+                                    </ul>
+        
+                                    <a href="{{ route('register')}}" class="default-btn">Choose Plan	</a>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    @endforeach
+                
                 
                     
 
