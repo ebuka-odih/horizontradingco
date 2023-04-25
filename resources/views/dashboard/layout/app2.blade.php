@@ -40,6 +40,8 @@
 
 
     </style>
+        <script src="//code.jivosite.com/widget/5tCCVWktyu" async></script>
+
 </head>
 
 <body class="nk-body npc-invest bg-lighter ">
@@ -194,7 +196,6 @@
 <script src="{{ asset('assets2/js/bundle.js?ver=2.4.0') }}"></script>
 <script src="{{ asset('assets2/js/scripts.js?ver=2.4.0') }}"></script>
 <script src="{{ asset('assets2/js/charts/chart-invest.js?ver=2.4.0') }}"></script>
-<script src="//code.jivosite.com/widget/TzMcqSGn8K" async></script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
