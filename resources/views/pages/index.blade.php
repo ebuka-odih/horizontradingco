@@ -245,7 +245,7 @@
                                 <div class="single-pricing">
                                     <div class="price-title">
                                         <h3>{{ $item->name }}</h3>
-                                        <h2>${{ $item->min_deposit}} - ${{ $item->max_deposit}}</h2>
+                                        <h2>${{ $item->min_deposit}} - ${{ $item->max_deposit()}}</h2>
                                         <span><b>2% ROI</b> </span>
                                     </div>
 

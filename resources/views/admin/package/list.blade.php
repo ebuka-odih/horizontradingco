@@ -52,7 +52,7 @@
                                     ${{ $item->min_deposit }}
                                 </td>
                                 <td class="d-none d-sm-table-cell">
-                                    ${{ $item->max_deposit }}
+                                    ${{ $item->max_deposit() }}
                                 </td>
                                 <td class="text-center">
                                     <div class="btn-group">

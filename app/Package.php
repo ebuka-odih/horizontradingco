@@ -12,4 +12,12 @@ class Package extends Model
     {
         return $this->daily_interest * $this->term_days;
     }
+    public function max_deposit()
+    {
+        if ($this->max_deposit == null)
+        {
+            return "Unlimited";
+        }
+        return $this->max_deposit;
+    }
 }

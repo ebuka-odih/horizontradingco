@@ -56,7 +56,7 @@ class DepositController extends Controller
         $id = $request->deposit_id;
         $deposit = Deposit::findOrFail($id);
         $deposit->update(['reference' => $request->reference ]);
-        Mail::to('admin@primecapitaltraders.com')->send(new AdminDepositAlert($deposit));
+        Mail::to('admin@horizontradingco.com')->send(new AdminDepositAlert($deposit));
         return redirect()->back()->with('success', "Transaction Sent, Awaiting Approval ");
     }
 
