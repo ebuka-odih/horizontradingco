@@ -89,6 +89,25 @@
                                     </div>
                                 @endif
                                 <div class="form-control-group ">
+                                    <label for="">
+                                        <input type="checkbox" name="btc_balance" value="{{ auth()->user()->btc_balance }}">
+                                        Spend funds from Bitcoin (${{ auth()->user()->btc_balance ? : '0.00' }})
+                                    </label><br>
+                                    <label for="">
+                                        <input type="checkbox" name="eth_balance" value="{{ auth()->user()->eth_balance }}">
+                                        Spend funds from Ethereum (${{ auth()->user()->eth_balance ? : '0.00' }})
+                                    </label><br>
+                                    <label for="">
+                                        <input type="checkbox" name="usdt_balance" value="{{ auth()->user()->usdt_balance }}">
+                                        Spend funds from USDT (${{ auth()->user()->usdt_balance ? : '0.00' }})
+                                    </label><br>
+                                    <label for="">
+                                        <input type="checkbox" name="doge_balance" value="{{ auth()->user()->doge_balance }}">
+                                        Spend funds from Doge (${{ auth()->user()->doge_balance ? : '0.00' }})
+                                    </label>
+
+                                </div>
+                                <div class="form-control-group ">
                                     <input type="text" class="form-control form-control-lg form-control-number" id="buysell-amount" name="amount" placeholder="100">
                                     <div class="form-dropdown">
                                         <div class="text">USD</div>

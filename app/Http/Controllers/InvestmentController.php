@@ -35,7 +35,7 @@ class InvestmentController extends Controller
     public function processInvest(Request $request)
     {
 //        return $request;
-        
+
         $invest = new Investment();
         if ($request->amount < \auth()->user()->balance){
             $plan_id = Package::findOrFail($request->package_id);
