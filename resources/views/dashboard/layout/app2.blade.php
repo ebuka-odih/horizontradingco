@@ -150,9 +150,8 @@
                                     </div>
                                     <div class="dropdown-inner">
                                         <ul class="link-list">
-                                            <li><a href="html/invest/profile.html"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
-                                            <li><a href="html/invest/profile-setting.html"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
-                                            <li><a class="dark-switch" href="#"><em class="icon ni ni-moon"></em><span>Dark Mode</span></a></li>
+                                            <li><a href="{{ route('user.profile') }}"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
+                                            <li><a href="{{ route('user.security') }}"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
                                         </ul>
                                     </div>
                                     <div class="dropdown-inner">
@@ -175,7 +174,7 @@
         <div class="nk-footer nk-footer-fluid bg-lighter">
             <div class="container-xl wide-lg">
                 <div class="nk-footer-wrap">
-                    <div class="nk-footer-copyright"> &copy; 2022  {{ env('APP_NAME') }}
+                    <div class="nk-footer-copyright"> &copy; 2023  {{ env('APP_NAME') }}
                     </div>
                     <div class="nk-footer-links">
                         <ul class="nav nav-sm">

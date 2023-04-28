@@ -254,7 +254,7 @@
                                                 <em class="icon ni ni-user-alt"></em>
                                             </div>
                                             <div class="user-info d-none d-md-block">
-                                                <div class="user-status user-status-unverified">Unverified</div>
+                                                <div >{!! auth()->user()->status() !!}</div>
                                                 <div class="user-name dropdown-indicator">{{ auth()->user()->fullname() }}</div>
                                             </div>
                                         </div>
