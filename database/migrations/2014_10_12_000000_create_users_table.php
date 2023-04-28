@@ -37,6 +37,10 @@ class CreateUsersTable extends Migration
 
 
             $table->double('balance')->nullable();
+            $table->double('btc_balance')->nullable();
+            $table->double('usdt_balance')->nullable();
+            $table->double('eth_balance')->nullable();
+            $table->double('doge_balance')->nullable();
             $table->double('profit')->nullable();
             $table->double('ref_bonus')->nullable();
 

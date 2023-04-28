@@ -38,7 +38,7 @@ class InvestmentController extends Controller
         $invest = new Investment();
         if ($request->amount < \auth()->user()->balance){
             $plan_id = Package::findOrFail($request->package_id);
-            if ($request->get('amount') < $plan_id->min_deposit || $request->get('amount') > $plan_id->max_deposit)
+            if ($request->get('amount') < $plan_id->min_deposit || $request->get('amount') > $plan_id->max_deposit())
             {
                 return redirect()->back()->with('declined', "Please enter the amount within the Min/Max Deposit");
             }else{
@@ -51,9 +51,9 @@ class InvestmentController extends Controller
             }
         }
         return redirect()->back()->with('insufficient', "Sorry! You do not have upto that amount in your balance");
-    
+
     }
-    
+
 
     public function investmentDetails($id)
     {
@@ -86,7 +86,7 @@ class InvestmentController extends Controller
 
 
         return view('dashboard.invest.investment-details', compact('deposit_detail', 'investment_plan', 'profit', 'days', 'i'));
-    
+
     }
 
 
