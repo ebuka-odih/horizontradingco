@@ -214,7 +214,7 @@
                         <!-- TradingView Widget END -->
                     </div>
 
-                    
+
 
                 </div>
                 <br><br>
@@ -223,25 +223,32 @@
 					<span class="top-title">PRICING PLANS</span>
 					<h2>Choose From Our Popular Pricing Plan</h2>
 				</div>
-               
+
                 <div class="row">
                     @foreach($plans as $item)
-                    
+
                     <div class="col-lg-6 ">
                         <div class="front-thumbnail">
-                            <figure class="box-pic"><a href="#"><img src="metaverse.jpg" alt=""></a></figure>
-                            <div class="rounded-circle"><figure class="center-circle-icon">
-                                <img src="https://www.shareicon.net/download/2015/11/24/677320_graphics.svg" alt="">
-                            </figure> </div>
-                            <div class="figure-caption">
-                
+                            <div style="background-color: #1b6d1c">
+                                <figure class="box-pic"><a href="#">
+                                        <img src="metaverse.jpg" alt=""></a>
+                                </figure>
+                                <div  class="rounded-circle">
+                                    <figure class="center-circle-icon">
+                                        <img src="https://www.shareicon.net/download/2015/11/24/677320_graphics.svg" alt="">
+                                    </figure>
+                                </div>
+                            </div>
+
+                            <div style="background-color: #14213D" class="figure-caption">
+
                                 <div class="single-pricing">
                                     <div class="price-title">
                                         <h3>{{ $item->name }}</h3>
                                         <h2>${{ $item->min_deposit}} - ${{ $item->max_deposit}}</h2>
                                         <span><b>2% ROI</b> </span>
                                     </div>
-        
+
                                     <ul>
                                         <li>
                                             <i class="ri-check-line"></i>
@@ -249,28 +256,28 @@
                                         </li>
                                         <li>
                                             <i class="ri-check-line"></i>
-                                    
+
                                         </li>
                                         <li>
                                             <i class="ri-check-line"></i>
                                         10% Referral Bonus
                                         </li>
-                                        
+
                                         <li>
                                             <i class="ri-check-line"></i>
                                             24/7 Support
                                         </li>
                                     </ul>
-        
+
                                     <a href="{{ route('register')}}" class="default-btn">Choose Plan	</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     @endforeach
-                
-                
-                    
+
+
+
 
                 </div>
 
@@ -591,34 +598,7 @@
         </div>
 
         <div class="container-fluid counter-parallax">
-            <!--        <div class="container">
-                        <div class="row">
-                            <div class="col-sm-3 col-md-3">
-                                <div class="counter-statistics">
-                                    <div class="counter">4004</div>
-                                    <h5>Running days</h5>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 col-md-3">
-                                <div class="counter-statistics">
-                                    <div class="counter"></div>
-                                    <h5>Total accounts</h5>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 col-md-3">
-                                <div class="counter-statistics">
-                                    <div class="counter">$ </div>
-                                    <h5>Total deposited</h5>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 col-md-3">
-                                <div class="counter-statistics">
-                                    <div class="counter">$ </div>
-                                    <h5>Total withdraw</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>  -->
+
         </div>
 
         <div class="container">

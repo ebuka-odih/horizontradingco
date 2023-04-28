@@ -26,7 +26,7 @@
                             </div>
                             <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                                 <div class="panel-body">
-                                    <p> Forex Trading Capital Ltd Limited is an investment firm, managed by a team of financial experts that generate profits through buying and selling cryptocurrencies, stocks, options and commodities as well as real estate investments.</p>
+                                    <p> {{ env('APP_NAME') }} is an investment firm, managed by a team of financial experts that generate profits through buying and selling cryptocurrencies, stocks, options and commodities as well as real estate investments.</p>
                                 </div>
                             </div>
                         </div>
@@ -40,7 +40,7 @@
                             </div>
                             <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                                 <div class="panel-body">
-                                    <p> There is no need to download something before you can start trading with Forex Trading Capital Ltd Limited. All you need to do is register and deposit funds into your account and you’ll be ready to trade.</p>
+                                    <p> There is no need to download something before you can start trading with {{ env('APP_NAME') }}. All you need to do is register and deposit funds into your account and you’ll be ready to trade.</p>
                                 </div>
                             </div>
                         </div>
