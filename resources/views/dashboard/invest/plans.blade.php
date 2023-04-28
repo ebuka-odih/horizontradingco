@@ -88,25 +88,36 @@
                                         {{ session()->get('insufficient') }}
                                     </div>
                                 @endif
+                                @if(session()->has('wallet'))
+                                    <div class="alert alert-danger">
+                                        {{ session()->get('wallet') }}
+                                    </div>
+                                @endif
                                 <div class="form-control-group ">
                                     <label for="">
-                                        <input type="checkbox" name="btc_balance" value="{{ auth()->user()->btc_balance }}">
-                                        Spend funds from Bitcoin (${{ auth()->user()->btc_balance ? : '0.00' }})
+                                        <input type="radio" name="balance" value="balance">
+                                        Spend funds Main Balance ($@convert(auth()->user()->balance))
                                     </label><br>
                                     <label for="">
-                                        <input type="checkbox" name="eth_balance" value="{{ auth()->user()->eth_balance }}">
-                                        Spend funds from Ethereum (${{ auth()->user()->eth_balance ? : '0.00' }})
+                                        <input type="radio" name="balance" value="btc_balance">
+                                        Spend funds from Bitcoin ($@convert(auth()->user()->btc_balance))
+                                    </label>
+                                    <br>
+                                    <label for="">
+                                        <input type="radio" name="balance" value="eth_balance">
+                                        Spend funds from Ethereum ($@convert(auth()->user()->eth_balance))
                                     </label><br>
                                     <label for="">
-                                        <input type="checkbox" name="usdt_balance" value="{{ auth()->user()->usdt_balance }}">
-                                        Spend funds from USDT (${{ auth()->user()->usdt_balance ? : '0.00' }})
+                                        <input type="radio" name="balance" value="usdt_balance">
+                                        Spend funds from USDT ($@convert(auth()->user()->usdt_balance))
                                     </label><br>
                                     <label for="">
-                                        <input type="checkbox" name="doge_balance" value="{{ auth()->user()->doge_balance }}">
-                                        Spend funds from Doge (${{ auth()->user()->doge_balance ? : '0.00' }})
+                                        <input type="radio" name="balance" value="doge_balance">
+                                        Spend funds from Doge ($@convert(auth()->user()->doge_balance))
                                     </label>
 
                                 </div>
+
                                 <div class="form-control-group ">
                                     <input type="text" class="form-control form-control-lg form-control-number" id="buysell-amount" name="amount" placeholder="100">
                                     <div class="form-dropdown">

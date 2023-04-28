@@ -35,23 +35,117 @@ class InvestmentController extends Controller
     public function processInvest(Request $request)
     {
 //        return $request;
-
         $invest = new Investment();
-        if ($request->amount < \auth()->user()->balance){
-            $plan_id = Package::findOrFail($request->package_id);
-            if ($request->get('amount') < $plan_id->min_deposit || $request->get('amount') > $plan_id->max_deposit())
+        if($request->balance == "balance"){
+            if ($request->amount < auth()->user()->balance)
             {
-                return redirect()->back()->with('declined', "Please enter the amount within the Min/Max Deposit");
-            }else{
-                $invest->package_id = $request->package_id;
-                $invest->user_id = Auth::id();
-                $invest->amount = $request->amount;
-                $invest->status = 1;
-                $invest->save();
-                return redirect()->route('user.investmentDetails', $invest->id);
+                $plan_id = Package::findOrFail($request->package_id);
+                if ($request->get('amount') < $plan_id->min_deposit || $request->get('amount') > $plan_id->max_deposit())
+                {
+                    return redirect()->back()->with('declined', "Please enter the amount within the Min/Max Deposit");
+                }else{
+                    $invest->package_id = $request->package_id;
+                    $invest->user_id = Auth::id();
+                    $invest->amount = $request->amount;
+                    $invest->status = 1;
+                    $user = User::findOrFail($invest->user_id);
+                    $user->balance -= $request->amount;
+                    $user->save();
+                    $invest->save();
+                    return redirect()->route('user.investmentDetails', $invest->id);
+                }
             }
+            return redirect()->back()->with('insufficient', "Sorry! You do not have upto that amount in your Main balance");
+
         }
-        return redirect()->back()->with('insufficient', "Sorry! You do not have upto that amount in your balance");
+        elseif($request->balance == "btc_balance"){
+            if ($request->amount < auth()->user()->btc_balance)
+            {
+                $plan_id = Package::findOrFail($request->package_id);
+                if ($request->get('amount') < $plan_id->min_deposit || $request->get('amount') > $plan_id->max_deposit())
+                {
+                    return redirect()->back()->with('declined', "Please enter the amount within the Min/Max Deposit");
+                }else{
+                    $invest->package_id = $request->package_id;
+                    $invest->user_id = Auth::id();
+                    $invest->amount = $request->amount;
+                    $invest->status = 1;
+                    $user = User::findOrFail($invest->user_id);
+                    $user->btc_balance -= $request->amount;
+                    $user->save();
+                    $invest->save();
+                    return redirect()->route('user.investmentDetails', $invest->id);
+                }
+            }
+            return redirect()->back()->with('insufficient', "Sorry! You do not have upto that amount in your Bitcoin balance");
+
+        }
+        elseif($request->balance == "eth_balance"){
+            if ($request->amount < auth()->user()->eth_balance)
+            {
+                $plan_id = Package::findOrFail($request->package_id);
+                if ($request->get('amount') < $plan_id->min_deposit || $request->get('amount') > $plan_id->max_deposit())
+                {
+                    return redirect()->back()->with('declined', "Please enter the amount within the Min/Max Deposit");
+                }else{
+                    $invest->package_id = $request->package_id;
+                    $invest->user_id = Auth::id();
+                    $invest->amount = $request->amount;
+                    $invest->status = 1;
+                    $user = User::findOrFail($invest->user_id);
+                    $user->eth_balance -= $request->amount;
+                    $user->save();
+                    $invest->save();
+                    return redirect()->route('user.investmentDetails', $invest->id);
+                }
+            }
+            return redirect()->back()->with('insufficient', "Sorry! You do not have upto that amount in your Ethereum balance");
+
+        }
+        elseif($request->balance == "usdt_balance"){
+            if ($request->amount < auth()->user()->usdt_balance)
+            {
+                $plan_id = Package::findOrFail($request->package_id);
+                if ($request->get('amount') < $plan_id->min_deposit || $request->get('amount') > $plan_id->max_deposit())
+                {
+                    return redirect()->back()->with('declined', "Please enter the amount within the Min/Max Deposit");
+                }else{
+                    $invest->package_id = $request->package_id;
+                    $invest->user_id = Auth::id();
+                    $invest->amount = $request->amount;
+                    $invest->status = 1;
+                    $user = User::findOrFail($invest->user_id);
+                    $user->usdt_balance -= $request->amount;
+                    $user->save();
+                    $invest->save();
+                    return redirect()->route('user.investmentDetails', $invest->id);
+                }
+            }
+            return redirect()->back()->with('insufficient', "Sorry! You do not have upto that amount in your USDT balance");
+
+        }elseif($request->balance == "doge_balance"){
+            if ($request->amount < auth()->user()->doge_balance)
+            {
+                $plan_id = Package::findOrFail($request->package_id);
+                if ($request->get('amount') < $plan_id->min_deposit || $request->get('amount') > $plan_id->max_deposit())
+                {
+                    return redirect()->back()->with('declined', "Please enter the amount within the Min/Max Deposit");
+                }else{
+                    $invest->package_id = $request->package_id;
+                    $invest->user_id = Auth::id();
+                    $invest->amount = $request->amount;
+                    $invest->status = 1;
+                    $user = User::findOrFail($invest->user_id);
+                    $user->doge_balance -= $request->amount;
+                    $user->save();
+                    $invest->save();
+                    return redirect()->route('user.investmentDetails', $invest->id);
+                }
+            }
+            return redirect()->back()->with('insufficient', "Sorry! You do not have upto that amount in your Doge balance");
+
+        }
+        return redirect()->back()->with('wallet', "Select A Wallet Account");
 
     }
 
