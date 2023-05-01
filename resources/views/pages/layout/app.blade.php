@@ -151,6 +151,7 @@
         </script>
 
         <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
     </center>
 </div>
 
@@ -329,7 +330,7 @@
             <hr class="footer">
             <div class="bottom-footer">
                 <div class="copytight">
-                    <p>Copyright © 2020-2023 by  {{ env('APP_NAME') }} | All rights reserved</p>
+                    <p>Copyright © 2020-{{ Date('Y') }} by  {{ env('APP_NAME') }} | All rights reserved</p>
                 </div>
             </div>
         </div>

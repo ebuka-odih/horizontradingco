@@ -16,34 +16,34 @@
     <script src="//code.jivosite.com/widget/5tCCVWktyu" async></script>
 
 
-    <style>
-        #google_translate_element {
+{{--    <style>--}}
+{{--        #google_translate_element {--}}
 
-            color: transparent;
-        }
+{{--            color: transparent;--}}
+{{--        }--}}
 
-        #google_translate_element a {
+{{--        #google_translate_element a {--}}
 
-            display: none;
-        }
+{{--            display: none;--}}
+{{--        }--}}
 
-        select.google_translate_element {
+{{--        select.google_translate_element {--}}
 
-            color: black;
-        }
+{{--            color: black;--}}
+{{--        }--}}
 
-        div.goog-te-gadget {
+{{--        div.goog-te-gadget {--}}
 
-            color: transparent;
-        }
+{{--            color: transparent;--}}
+{{--        }--}}
 
-        div.goog-te-gadget {
+{{--        div.goog-te-gadget {--}}
 
-            color: transparent !important;
-        }
+{{--            color: transparent !important;--}}
+{{--        }--}}
 
 
-    </style>
+{{--    </style>--}}
 </head>
 
 <body class="nk-body npc-crypto bg-white has-sidebar ">
@@ -218,13 +218,14 @@
                                 <span class="nio-version">Crypto</span>
                             </a>
                             <div id="google_translate_element"></div>
-                            <script>
+                            <script type="text/javascript">
                                 function googleTranslateElementInit() {
-                                    new google.translate.TranslateElement({
-                                        pageLanguage: 'en'
-                                    }, 'google_translate_element');
+                                    new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
                                 }
                             </script>
+
+                            <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
                         </div>
                         <div class="nk-header-news d-none d-xl-block">
                             <div class="nk-news-list">

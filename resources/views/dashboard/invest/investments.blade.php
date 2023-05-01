@@ -82,7 +82,7 @@
                                 <em class="icon ni ni-update"></em>
                             </div>
                             <div class="nk-iv-scheme-info">
-                                <div class="nk-iv-scheme-name">{{ $item->package->name }} - Daily {{ $item->package->daily_interest }}% for {{ $item->package->term_days }} Days</div>
+                                <div class="nk-iv-scheme-name">{{ optional($item->package)->name }} - Daily {{ optional($item->package)->daily_interest }}% for {{ $item->package->term_days }} Days</div>
                                 <div class="nk-iv-scheme-desc">Invested Amount - <span class="amount">$@convert($item->amount)</span></div>
                             </div>
                             <div class="nk-iv-scheme-term">
