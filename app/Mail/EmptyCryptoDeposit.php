@@ -29,9 +29,7 @@ class EmptyCryptoDeposit extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.empty_crypto_deposit')
-            ->subject(env('APP_NAME'))
-            ->from(env('MAIL_FROM_NAME', 'APP_NAME'));
+        return $this->markdown('emails.empty_crypto_deposit');
     }
 
 }

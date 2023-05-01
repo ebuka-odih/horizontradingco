@@ -29,8 +29,6 @@ class RequestWithdraw extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.request_withdraw')
-            ->subject(env('APP_NAME'))
-            ->from(env('MAIL_FROM_NAME', 'APP_NAME'));
+        return $this->markdown('emails.request_withdraw');
     }
 }

@@ -22,11 +22,11 @@ Route::group(['middleware' => ['auth', 'verified', 'admin'], 'prefix' => 'admin'
 
 
     Route::get('deposits', "Admin\AdminDeposit@deposits")->name('deposit');
-    Route::get('view/deposits', "Admin\AdminDeposit@view_deposit")->name('view_deposit');
+    Route::get('view/deposit/{id}', "Admin\AdminDeposit@view_deposit")->name('view_deposit');
     Route::get('approve/deposit/{id}', "Admin\AdminDeposit@approve_deposit")->name('approve_deposit');
     Route::delete('delete/deposit/{id}', "Admin\AdminDeposit@deleteDeposit")->name('deleteDeposit');
 
-    
+
 
     // Withdrawal Route
     Route::get('withdrawals', "Admin\AdminWithdraw@withdrawal")->name('withdrawal');

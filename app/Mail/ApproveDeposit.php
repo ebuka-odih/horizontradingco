@@ -29,8 +29,6 @@ class ApproveDeposit extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.approveDeposit')
-            ->subject(env('APP_NAME'))
-            ->from(env('MAIL_FROM_NAME', 'APP_NAME'));
+        return $this->markdown('emails.approveDeposit');
     }
 }

@@ -19,7 +19,7 @@ class AdminDeposit extends Controller
 
     public function view_deposit($id)
     {
-        $deposit = Deposit::findOFail($id);
+        $deposit = Deposit::findOrFail($id);
         return view('admin.transactions.deposit-details', compact('deposit'));
     }
 
