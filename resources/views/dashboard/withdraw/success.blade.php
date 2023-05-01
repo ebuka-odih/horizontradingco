@@ -27,7 +27,7 @@
                                             <li><a href="{{ route('user.dashboard') }}" class="link link-primary">Go back to Dashboard</a></li>
                                         </ul>
                                     </div>
-                                    <div class="nk-pps-notes text-center">Please do not hesitate to <a href="{{ route('contact') }}">contact us</a> if you have any questions.</div>
+                                    <div class="nk-pps-notes text-center">Please do not hesitate to contact us if you have any questions.</div>
 
                                 </div><!-- .nk-block -->
                             </div><!-- .modal-body -->

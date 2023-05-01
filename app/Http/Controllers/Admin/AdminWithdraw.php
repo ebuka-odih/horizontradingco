@@ -23,6 +23,7 @@ class AdminWithdraw extends Controller
         $user = User::findOrFail($withdraw->user_id);
         $user->balance -= $withdraw->amount;
         $user->save();
+        $withdraw->status = 1;
         $withdraw->save();
         Mail::to($user->email)->send(new ApproveWithdraw($withdraw));
         return redirect()->back()->with('success', "Withdrawal Approved Successfully");
