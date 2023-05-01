@@ -329,7 +329,7 @@
             <hr class="footer">
             <div class="bottom-footer">
                 <div class="copytight">
-                    <p>Copyright © 2020-2023 by  Forex Trading Capital Ltd | All rights reserved</p>
+                    <p>Copyright © 2020-2023 by  {{ env('APP_NAME') }} | All rights reserved</p>
                 </div>
             </div>
         </div>

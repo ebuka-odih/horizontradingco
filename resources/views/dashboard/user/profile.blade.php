@@ -31,7 +31,7 @@
                     <div class="nk-block-head-content">
                         <h5 class="nk-block-title">Personal Information</h5>
                         <div class="nk-block-des">
-                            <p>Basic info, like your name and address, that you use on Aflluent-CoinFX.</p>
+                            <p>Basic info, like your name and address, that you use on {{ env('APP_NAME') }}.</p>
                         </div>
                     </div>
                 </div><!-- .nk-block-head -->
