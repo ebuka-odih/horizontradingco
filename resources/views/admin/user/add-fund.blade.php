@@ -18,7 +18,7 @@
 
         <!-- Page Content -->
         <div class="content">
-           
+
             <!-- Elements -->
             <div class="block block-rounded">
                 <div class="block-content">
@@ -50,20 +50,23 @@
                                     </select>
                                 </div>
                             </div>
-
-
                             <div class="col-lg-6 col-xl-6">
                                 <div class="mb-4">
-                                    <label class="form-label"  for="example-email-input">Type of Fund</label>
+                                    <label class="form-label"  for="example-email-input">Wallet</label>
                                     <select name="type" id="" class="form-control ">
-                                        <option disabled selected>Select </option>
-                                        <option value="Bonus">Bonus</option>
-                                        <option value="Profit">Profit</option>
-                                        <option value="Referral-Bonus">Referral Bonus</option>
+                                        <option disabled selected>Select Wallet</option>
+                                        <option value="balance">Main Bal</option>
+                                        <option value="btc_balance">BTC Bal</option>
+                                        <option value="usdt_balance">USDT Bal</option>
+                                        <option value="eth_balance">ETH Bal</option>
+                                        <option value="doge_balance">Doge Bal</option>
+                                        <option value="profit">Profit Bal</option>
+                                        <option value="ref_bonus">Referral Bal</option>
                                         {{--                                        <option value="Profit">Profit</option>--}}
                                     </select>
                                 </div>
                             </div>
+
                             <div class="col-lg-6 col-xl-6">
                                 <div class="mb-4">
                                     <label class="form-label" for="example-email-input">Amount</label>
