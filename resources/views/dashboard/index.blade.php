@@ -106,7 +106,7 @@
                                             <a class="nk-wgw-inner" >
                                                 <div class="nk-wgw-name">
                                                     <div class="nk-wgw-icon">
-                                                        <em class="icon ni ni-sign-btc"></em>
+                                                        <em class="icon ni ni-sign-dollar"></em>
                                                     </div>
                                                     <h5 class="nk-wgw-title title">Total Deposit</h5>
                                                 </div>
@@ -123,7 +123,7 @@
                                             <a class="nk-wgw-inner" >
                                                 <div class="nk-wgw-name">
                                                     <div class="nk-wgw-icon">
-                                                        <em class="icon ni ni-sign-eth"></em>
+                                                        <em class="icon ni ni-sign-dollar"></em>
                                                     </div>
                                                     <h5 class="nk-wgw-title title">Pending Deposits</h5>
                                                 </div>
@@ -140,7 +140,7 @@
                                             <a class="nk-wgw-inner" >
                                                 <div class="nk-wgw-name">
                                                     <div class="nk-wgw-icon">
-                                                        <em class="icon ni ni-sign-btc"></em>
+                                                        <em class="icon ni ni-sign-dollar"></em>
                                                     </div>
                                                     <h5 class="nk-wgw-title title">Last Deposit</h5>
                                                 </div>
@@ -157,7 +157,7 @@
                                             <a class="nk-wgw-inner" >
                                                 <div class="nk-wgw-name">
                                                     <div class="nk-wgw-icon">
-                                                        <em class="icon ni ni-sign-btc"></em>
+                                                        <em class="icon ni ni-sign-dollar"></em>
                                                     </div>
                                                     <h5 class="nk-wgw-title title">Total Withdrawal</h5>
                                                 </div>
@@ -174,7 +174,7 @@
                                             <a class="nk-wgw-inner" >
                                                 <div class="nk-wgw-name">
                                                     <div class="nk-wgw-icon">
-                                                        <em class="icon ni ni-sign-btc"></em>
+                                                        <em class="icon ni ni-sign-dollar"></em>
                                                     </div>
                                                     <h5 class="nk-wgw-title title">Pending Withdrawal</h5>
                                                 </div>
@@ -191,7 +191,7 @@
                                             <a class="nk-wgw-inner" >
                                                 <div class="nk-wgw-name">
                                                     <div class="nk-wgw-icon">
-                                                        <em class="icon ni ni-sign-btc"></em>
+                                                        <em class="icon ni ni-sign-dollar"></em>
                                                     </div>
                                                     <h5 class="nk-wgw-title title">Last Withdrawal</h5>
                                                 </div>
@@ -208,7 +208,7 @@
                                             <a class="nk-wgw-inner" >
                                                 <div class="nk-wgw-name">
                                                     <div class="nk-wgw-icon">
-                                                        <em class="icon ni ni-sign-btc"></em>
+                                                        <em class="icon ni ni-sign-dollar"></em>
                                                     </div>
                                                     <h5 class="nk-wgw-title title">Total Earned</h5>
                                                 </div>
