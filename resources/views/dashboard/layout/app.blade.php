@@ -16,34 +16,34 @@
     <script src="//code.jivosite.com/widget/5tCCVWktyu" async></script>
 
 
-{{--    <style>--}}
-{{--        #google_translate_element {--}}
+    <style>
+        #google_translate_element {
 
-{{--            color: transparent;--}}
-{{--        }--}}
+            color: transparent;
+        }
 
-{{--        #google_translate_element a {--}}
+        #google_translate_element a {
 
-{{--            display: none;--}}
-{{--        }--}}
+            display: none;
+        }
 
-{{--        select.google_translate_element {--}}
+        select.google_translate_element {
 
-{{--            color: black;--}}
-{{--        }--}}
+            color: black;
+        }
 
-{{--        div.goog-te-gadget {--}}
+        div.goog-te-gadget {
 
-{{--            color: transparent;--}}
-{{--        }--}}
+            color: transparent;
+        }
 
-{{--        div.goog-te-gadget {--}}
+        div.goog-te-gadget {
 
-{{--            color: transparent !important;--}}
-{{--        }--}}
+            color: transparent !important;
+        }
 
 
-{{--    </style>--}}
+    </style>
 </head>
 
 <body class="nk-body npc-crypto bg-white has-sidebar ">
@@ -144,6 +144,18 @@
                                     <a href="{{ route('user.dashboard') }}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-dashboard"></em></span>
                                         <span class="nk-menu-text">Dashboard</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('user.deposit') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-arrow-down"></em></span>
+                                        <span class="nk-menu-text">Deposit</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('user.withdraw') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-arrow-up"></em></span>
+                                        <span class="nk-menu-text">Withdraw</span>
                                     </a>
                                 </li>
                                 <li class="nk-menu-item">
