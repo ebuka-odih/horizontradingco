@@ -145,7 +145,7 @@
                                                     <h5 class="nk-wgw-title title">Last Deposit</h5>
                                                 </div>
                                                 <div class="nk-wgw-balance">
-                                                    <div class="amount">{{ $last_deposit->amount }}<span class="currency currency-btc">USD</span></div>
+                                                    <div class="amount">{{ optional($last_deposit)->amount ? : "0.00" }}<span class="currency currency-btc">USD</span></div>
                                                 </div>
                                             </a>
                                         </div>
@@ -196,7 +196,7 @@
                                                     <h5 class="nk-wgw-title title">Last Withdrawal</h5>
                                                 </div>
                                                 <div class="nk-wgw-balance">
-                                                    <div class="amount">{{ $l_withdrawal->amount }}<span class="currency currency-btc">USD</span></div>
+                                                    <div class="amount">{{ optional($l_withdrawal)->amount ? : "0.00" }}<span class="currency currency-btc">USD</span></div>
                                                 </div>
                                             </a>
                                         </div>
