@@ -27,7 +27,7 @@ class Investment extends Model
 
     public function getEarningAttribute()
     {
-        $expected_percent = $this->package->daily_interest  * $this->amount;
+        $expected_percent = optional($this->package)->daily_interest  * $this->amount;
         $profit_percent =  number_format((float)$expected_percent / 100, 2, '.', '');
 
         $days = 0;
@@ -37,10 +37,10 @@ class Investment extends Model
 
         $current_date = Carbon::now();
 
-        if($d_approved->diffInDays($current_date) < $this->package->term_days){
+        if($d_approved->diffInDays($current_date) < optional($this->package)->term_days){
             $days = $d_approved->diffInDays($current_date);
         }else {
-            $days =  $this->package->term_days;
+            $days =  optional($this->package)->term_days;
         }
 
         $earned = 0;
