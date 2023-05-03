@@ -81,7 +81,7 @@
                                             <div class="nk-wg7-stats-group">
                                                 <div class="nk-wg7-stats w-50">
                                                     <div class="nk-wg7-title">Investment</div>
-                                                    <div class="number-lg">@convert(auth()->user()->investment) <span>USD</span></div>
+                                                    <div class="number">@convert($investment) <span>USD</span></div>
                                                 </div>
                                             </div>
                                         </div><!-- .nk-wg7 -->
@@ -142,6 +142,23 @@
                                                     <div class="nk-wgw-icon">
                                                         <em class="icon ni ni-sign-btc"></em>
                                                     </div>
+                                                    <h5 class="nk-wgw-title title">Last Deposit</h5>
+                                                </div>
+                                                <div class="nk-wgw-balance">
+                                                    <div class="amount">{{ $last_deposit->amount }}<span class="currency currency-btc">USD</span></div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="card bg-light">
+                                        <div class="nk-wgw sm">
+                                            <a class="nk-wgw-inner" >
+                                                <div class="nk-wgw-name">
+                                                    <div class="nk-wgw-icon">
+                                                        <em class="icon ni ni-sign-btc"></em>
+                                                    </div>
                                                     <h5 class="nk-wgw-title title">Total Withdrawal</h5>
                                                 </div>
                                                 <div class="nk-wgw-balance">
@@ -150,7 +167,59 @@
                                             </a>
                                         </div>
                                     </div>
-                                </div><!-- .col -->
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="card bg-light">
+                                        <div class="nk-wgw sm">
+                                            <a class="nk-wgw-inner" >
+                                                <div class="nk-wgw-name">
+                                                    <div class="nk-wgw-icon">
+                                                        <em class="icon ni ni-sign-btc"></em>
+                                                    </div>
+                                                    <h5 class="nk-wgw-title title">Pending Withdrawal</h5>
+                                                </div>
+                                                <div class="nk-wgw-balance">
+                                                    <div class="amount">@convert($p_withdrawal)<span class="currency currency-btc">USD</span></div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="card bg-light">
+                                        <div class="nk-wgw sm">
+                                            <a class="nk-wgw-inner" >
+                                                <div class="nk-wgw-name">
+                                                    <div class="nk-wgw-icon">
+                                                        <em class="icon ni ni-sign-btc"></em>
+                                                    </div>
+                                                    <h5 class="nk-wgw-title title">Last Withdrawal</h5>
+                                                </div>
+                                                <div class="nk-wgw-balance">
+                                                    <div class="amount">{{ $l_withdrawal->amount }}<span class="currency currency-btc">USD</span></div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="card bg-light">
+                                        <div class="nk-wgw sm">
+                                            <a class="nk-wgw-inner" >
+                                                <div class="nk-wgw-name">
+                                                    <div class="nk-wgw-icon">
+                                                        <em class="icon ni ni-sign-btc"></em>
+                                                    </div>
+                                                    <h5 class="nk-wgw-title title">Total Earned</h5>
+                                                </div>
+                                                <div class="nk-wgw-balance">
+                                                    <div class="amount">{{ $total_earned ? : '0.00' }}<span class="currency currency-btc">USD</span></div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- .col -->
 
                             </div><!-- .row -->
                         </div><!-- .nk-block -->
@@ -169,8 +238,8 @@
                         <script type="text/javascript">
                             new TradingView.widget(
                                 {
-                                    "autosize": true,
-                                    // "height": 610,
+                                    "height": 610,
+                                    "width": "100%",
                                     "symbol": "BINANCE:BTCUSDT",
                                     "interval": "60",
                                     "timezone": "Etc/UTC",

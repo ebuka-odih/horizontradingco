@@ -17,10 +17,20 @@ class UserController extends Controller
     public function dashboard()
     {
         $withdrawal = Withdraw::whereUserId(\auth()->id())->where('status', 1)->sum('amount');
+        $p_withdrawal = Withdraw::whereUserId(\auth()->id())->where('status', 0)->sum('amount');
+        $l_withdrawal = Withdraw::whereUserId(\auth()->id())->where('status', 1)->select('amount')->orderBy('created_at', 'desc')->first();
         $pending_deposits = Deposit::whereUserId(\auth()->id())->where('status', 0)->sum('amount');
         $deposits = Deposit::whereUserId(\auth()->id())->where('status', 1)->sum('amount');
+        $last_deposit = Deposit::whereUserId(\auth()->id())->where('status', 1)->select('amount')->orderBy('created_at', 'desc')->first();
         $investment = Investment::whereUserId(\auth()->id())->where('status', 1)->sum('amount');
-        return view('dashboard.index', compact('investment', 'deposits', 'withdrawal', 'pending_deposits'));
+        $earned = Investment::whereUserId(\auth()->id())->where('status', 1)->get();
+        $total_earned = 0;
+        foreach ($earned as $item)
+        {
+            $total_earned += $item->earning;
+        }
+        return view('dashboard.index', compact('investment', 'total_earned', 'deposits', 'pending_deposits', 'last_deposit',
+            'withdrawal', 'p_withdrawal', 'l_withdrawal'));
     }
 
     public function all_referrals()
@@ -56,7 +66,7 @@ class UserController extends Controller
         return $request->validate($rules);
     }
 
-    
+
 
     public function storeAcct(Request $request)
     {

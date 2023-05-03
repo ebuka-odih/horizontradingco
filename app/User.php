@@ -86,7 +86,7 @@ class User extends Authenticatable
 
     public function withdrawal()
     {
-        return $this->hasMany(Withdrawal::class, 'user_id');
+        return $this->hasMany(Withdraw::class, 'user_id');
     }
     public function deposit()
     {
@@ -95,6 +95,10 @@ class User extends Authenticatable
     public function funding()
     {
         return $this->hasMany(Funding::class, 'user_id');
+    }
+    public function investment()
+    {
+        return $this->hasMany(Investment::class, 'user_id');
     }
 
     public function getProfilePicAttribute($value) {
