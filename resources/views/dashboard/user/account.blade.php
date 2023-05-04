@@ -16,7 +16,7 @@
                         <a class="nav-link" href="{{ route('user.profile') }}">Personal</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('user.account') }}">Account</a>
+                        <a class="nav-link active" href="{{ route('user.account') }}">Payout Account</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('user.security') }}">Security</a>
@@ -52,6 +52,9 @@
                                     <div class="form-group">
                                         <label class="form-label" for="acccount-name">Wallet Name <span class="text-danger">*</span></label>
                                         <div class="form-control-wrap">
+                                            <select name="name" id="">
+
+                                            </select>
                                             <input name="name" type="text" class="form-control form-control-lg" id="acccount-name"  value="" required>
                                         </div>
                                     </div>

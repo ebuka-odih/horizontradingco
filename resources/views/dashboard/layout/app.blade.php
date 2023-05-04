@@ -15,35 +15,6 @@
     <link id="skin-default" rel="stylesheet" href="{{ asset('client/assets/css/theme.css?ver=2.4.0') }}">
     <script src="//code.jivosite.com/widget/5tCCVWktyu" async></script>
 
-
-    <style>
-        #google_translate_element {
-
-            color: transparent;
-        }
-
-        #google_translate_element a {
-
-            display: none;
-        }
-
-        select.google_translate_element {
-
-            color: black;
-        }
-
-        div.goog-te-gadget {
-
-            color: transparent;
-        }
-
-        div.goog-te-gadget {
-
-            color: transparent !important;
-        }
-
-
-    </style>
 </head>
 
 <body class="nk-body npc-crypto bg-white has-sidebar ">

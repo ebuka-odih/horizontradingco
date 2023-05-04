@@ -18,7 +18,7 @@
                     <a class="nav-link active" href="{{ route('user.profile') }}">Personal</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('user.account') }}">Account</a>
+                    <a class="nav-link" href="{{ route('user.account') }}">Payout Account</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('user.security') }}">Security</a>
