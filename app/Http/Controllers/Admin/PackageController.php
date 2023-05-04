@@ -60,11 +60,11 @@ class PackageController extends Controller
     protected function getData(Request $request)
     {
         $rules = [
-            'name' => 'nullable',
+            'name' => 'required',
             'min_deposit' => 'nullable',
             'max_deposit' => 'nullable',
-            'term_days' => 'nullable',
-            'daily_interest' => 'nullable',
+            'term_days' => 'required',
+            'daily_interest' => 'required',
         ];
         return $request->validate($rules);
     }
