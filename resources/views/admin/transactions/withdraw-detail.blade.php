@@ -40,6 +40,10 @@
                                             <th>Withdrawal Wallet:</th>
                                             <td>{{ optional($withdraw->withdraw_method)->name ? : "Null" }}</td>
                                         </tr>
+                                        <tr>
+                                            <th>Withdrawal Address:</th>
+                                            <td>{{ optional($withdraw->withdraw_method)->value ? : "Null" }}</td>
+                                        </tr>
                                     </table>
 
                                 </div>

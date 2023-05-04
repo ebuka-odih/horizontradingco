@@ -29,6 +29,7 @@ Route::group(['middleware' => ['auth', 'verified', 'admin'], 'prefix' => 'admin'
 
 
     // Withdrawal Route
+    Route::get('withdraw/detail/{id}', "Admin\AdminWithdraw@withdrawDetails")->name('withdrawDetails');
     Route::get('withdrawals', "Admin\AdminWithdraw@withdrawal")->name('withdrawal');
     Route::get('approve/withdrawal/{id}', "Admin\AdminWithdraw@approve_withdrawal")->name('approve_withdrawal');
     Route::delete('delete/withdrawal/{id}', "Admin\AdminWithdraw@delete_withdrawal")->name('delete_withdrawal');

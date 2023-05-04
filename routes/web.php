@@ -45,7 +45,6 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 
     //Withdrawal Routes
     Route::get('withdraw/transactions', "WithdrawController@transactions")->name('withdraw.transactions');
     Route::get('withdraw', "WithdrawController@withdraw")->name('withdraw');
-    Route::get('withdraw/detail/{id}', "WithdrawController@withdrawDetails")->name('withdrawDetails');
     Route::post('withdraw', "WithdrawController@processWithdraw")->name('processWithdraw');
     Route::get('withdraw/success/RETWYR432{id}3TYW5T', "WithdrawController@success")->name('success');
     Route::get('cancelled/withdrawal/XCRTRD{id}ERTX8F&', "WithdrawController@cancelWithdraw")->name('cancelWithdraw');
