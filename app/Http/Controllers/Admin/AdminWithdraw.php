@@ -17,6 +17,12 @@ class AdminWithdraw extends Controller
         return view('admin.transactions.withdrawal', compact('withdrawal'));
     }
 
+    public function withdrawDetails($id)
+    {
+        $withdraw = Withdraw::findOrFail($id);
+        return view('admin.transactions.withdraw-detail', compact('withdraw'));
+    }
+
     public function approve_withdrawal($id)
     {
         $withdraw = Withdraw::findOrFail($id);

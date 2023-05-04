@@ -9,7 +9,7 @@
             <div class="d-md-flex justify-content-md-between align-items-md-center py-3 pt-md-3 pb-md-0 text-center text-md-start">
                 <div>
                     <h1 class="h3 mb-1">
-                         Deposit Details
+                        Deposit Details
                     </h1>
                 </div>
             </div>
@@ -30,15 +30,15 @@
                                     <table style="width:100%" class="table table-striped">
                                         <tr>
                                             <th>Name:</th>
-                                            <td>{{ optional($deposit->user)->fullname() }}</td>
+                                            <td>{{ optional($withdraw->user)->fullname() }}</td>
                                         </tr>
                                         <tr>
                                             <th>Amount:</th>
-                                            <td>${{ $deposit->amount }}</td>
+                                            <td>${{ $withdraw->amount }}</td>
                                         </tr>
                                         <tr>
-                                            <th>Reference:</th>
-                                            <td>{{ $deposit->reference ? : "Null" }}</td>
+                                            <th>Withdrawal Wallet:</th>
+                                            <td>{{ optional($withdraw->withdraw_method)->name ? : "Null" }}</td>
                                         </tr>
                                     </table>
 
