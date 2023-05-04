@@ -165,7 +165,7 @@ class InvestmentController extends Controller
         $days = 1;
 
         $current_date = Carbon::now();
-        $d_approved = Carbon::parse($deposit_detail->approved_date);
+        $d_approved = Carbon::parse($deposit_detail->updated_at);
         $d_ended = Carbon::parse($deposit_detail->end_date);
 
         if($d_approved->diffInDays($current_date) < $investment_plan->term_days){

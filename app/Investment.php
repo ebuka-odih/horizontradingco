@@ -32,7 +32,7 @@ class Investment extends Model
 
         $days = 0;
 
-        $d_approved = Carbon::parse($this->approved_date);
+        $d_approved = Carbon::parse($this->updated_at);
         $d_ended = Carbon::parse($this->end_date);
 
         $current_date = Carbon::now();

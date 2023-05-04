@@ -205,8 +205,8 @@
 <div class="container my-0 mt-2 d-none d-lg-block">
     <nav class="navbar navbar-expand-lg navbar-dark">
         <a href="{{  route('index') }}" class="nav-brand">
-            <h2 style="font-weight: bolder; color: white">HorizontradingCo</h2>
-{{--            <img src="logo3.png" alt="" style="height:45px;background-color:white;border-radius:20px"  class="img-fluid">--}}
+{{--            <h2 style="font-weight: bolder; color: white">HorizontradingCo</h2>--}}
+            <img src="img/logo.jpeg" alt="" style="height:145px;background-color:white;border-radius:20px"  class="img-fluid">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
