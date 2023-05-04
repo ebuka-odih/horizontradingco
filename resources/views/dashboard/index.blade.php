@@ -219,6 +219,92 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-sm-4">
+                                    <div class="card bg-light">
+                                        <div class="nk-wgw sm">
+                                            <a class="nk-wgw-inner" >
+                                                <div class="nk-wgw-name">
+                                                    <div class="nk-wgw-icon">
+                                                        <em class="icon ni ni-sign-dollar"></em>
+                                                    </div>
+                                                    <h5 class="nk-wgw-title title">Profit Balance</h5>
+                                                </div>
+                                                <div class="nk-wgw-balance">
+                                                    <div class="amount">@convert(auth()->user()->profit)<span class="currency currency-btc">USD</span></div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="card bg-light">
+                                        <div class="nk-wgw sm">
+                                            <a class="nk-wgw-inner" >
+                                                <div class="nk-wgw-name">
+                                                    <div class="nk-wgw-icon">
+                                                        <em class="icon ni ni-sign-dollar"></em>
+                                                    </div>
+                                                    <h5 class="nk-wgw-title title">BTC Balance</h5>
+                                                </div>
+                                                <div class="nk-wgw-balance">
+                                                    <div class="amount">@convert(auth()->user()->btc_balance)<span class="currency currency-btc">USD</span></div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="card bg-light">
+                                        <div class="nk-wgw sm">
+                                            <a class="nk-wgw-inner" >
+                                                <div class="nk-wgw-name">
+                                                    <div class="nk-wgw-icon">
+                                                        <em class="icon ni ni-sign-dollar"></em>
+                                                    </div>
+                                                    <h5 class="nk-wgw-title title">ETH Balance</h5>
+                                                </div>
+                                                <div class="nk-wgw-balance">
+                                                    <div class="amount">@convert(auth()->user()->eth_balance)<span class="currency currency-btc">USD</span></div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="card bg-light">
+                                        <div class="nk-wgw sm">
+                                            <a class="nk-wgw-inner" >
+                                                <div class="nk-wgw-name">
+                                                    <div class="nk-wgw-icon">
+                                                        <em class="icon ni ni-sign-dollar"></em>
+                                                    </div>
+                                                    <h5 class="nk-wgw-title title">USDT Balance</h5>
+                                                </div>
+                                                <div class="nk-wgw-balance">
+                                                    <div class="amount">@convert(auth()->user()->usdt_balance)<span class="currency currency-btc">USD</span></div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="card bg-light">
+                                        <div class="nk-wgw sm">
+                                            <a class="nk-wgw-inner" >
+                                                <div class="nk-wgw-name">
+                                                    <div class="nk-wgw-icon">
+                                                        <em class="icon ni ni-sign-dollar"></em>
+                                                    </div>
+                                                    <h5 class="nk-wgw-title title">Doge Balance</h5>
+                                                </div>
+                                                <div class="nk-wgw-balance">
+                                                    <div class="amount">@convert(auth()->user()->doge_balance)<span class="currency currency-btc">USD</span></div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <!-- .col -->
 
                             </div><!-- .row -->
