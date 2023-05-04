@@ -1,7 +1,7 @@
 @component('mail::message')
 # Dear {{ $withdraw->user->fullname() }}
 
-You have successfully received your withdrawal from <a href="{{ env('APP_URL') }}">{{ env('APP_URL') }}</a> to your {{ $withdraw->withdraw_method['value'] }} wallet
+You have successfully received your withdrawal from <a href="{{ env('APP_URL') }}">{{ env('APP_NAME') }}</a> to your {{ $withdraw->withdraw_method['value'] }} wallet
 
 <p>Amount: $@convert($withdraw->amount)</p>
 
