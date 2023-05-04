@@ -19,7 +19,7 @@
             <div class="block block-rounded">
 
                 <div class="block-content">
-                    <form action="{{ route('admin.package.update', $package->id) }}" method="POST" enctype="multipart/form-data" >
+                    <form action="{{ route('admin.package.store') }}" method="POST" enctype="multipart/form-data" >
                         @csrf
                         @if ($errors->any())
                             <div class="alert alert-danger">
