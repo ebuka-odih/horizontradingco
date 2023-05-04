@@ -19,7 +19,7 @@
             <div class="block block-rounded">
 
                 <div class="block-content">
-                    <form action="{{ route('admin.package.store') }}" method="POST" enctype="multipart/form-data" >
+                    <form action="{{ route('admin.package.update', $package->id) }}" method="POST" enctype="multipart/form-data" >
                         @csrf
                         @if ($errors->any())
                             <div class="alert alert-danger">
@@ -37,25 +37,25 @@
                                 <div class="row">
                                     <div class="mb-4 col-lg-4">
                                         <label class="form-label" for="example-text-input">Name</label>
-                                        <input type="text" class="form-control" id="example-text-input" name="name" >
+                                        <input type="text" class="form-control" id="example-text-input" name="name" value="{{ old('name', optional($package)->name) }}">
                                     </div>
                                     <div class="mb-4 col-lg-4">
                                         <label class="form-label" for="example-password-input">Term Days</label>
-                                        <input type="number" class="form-control" id="example-password-input" name="term_days" >
+                                        <input type="number" class="form-control" id="example-password-input" name="term_days" value="{{ old('term_days', optional($package)->term_days) }}">
                                     </div>
                                     <div class="mb-4 col-lg-4">
                                         <label class="form-label" for="example-password-input">Daily Interest</label>
-                                        <input type="number" class="form-control" id="example-password-input" name="daily_interest" >
+                                        <input type="number" class="form-control" id="example-password-input" name="daily_interest" value="{{ old('daily_interest', optional($package)->daily_interest) }}">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="mb-4 col-lg-6">
                                         <label class="form-label" for="example-email-input">Min Deposit</label>
-                                        <input type="number" class="form-control" id="example-email-input" name="min_deposit" >
+                                        <input type="number" class="form-control" id="example-email-input" name="min_deposit" value="{{ old('min_deposit', optional($package)->min_deposit) }}">
                                     </div>
                                     <div class="mb-4 col-lg-6">
                                         <label class="form-label" for="example-password-input">Max Deposit</label>
-                                        <input type="number" class="form-control" id="example-password-input" name="max_deposit" >
+                                        <input type="number" class="form-control" id="example-password-input" name="max_deposit" value="{{ old('max_deposit', optional($package)->max_deposit) }}">
                                     </div>
                                 </div>
 
@@ -64,15 +64,14 @@
                             </div>
 
                         </div>
+                    </form>
                 </div>
 
                 <!-- END Basic Elements -->
-
-                </form>
             </div>
         </div>
         <!-- END Elements -->
-        </div>
+
         <!-- END Page Content -->
     </main>
 
