@@ -41,8 +41,7 @@
                             <div class="user-account-info between-center">
                                 <div class="user-account-main">
                                     <h6 class="overline-title-alt">Available Balance</h6>
-                                    <div class="user-balance">@convert(auth()->user()->balance) <small class="currency currency-btc">USD</small></div>
-                                    <div class="user-balance-alt">{{ auth()->user()->showRate() }} <span class="currency currency-btc">BTC</span></div>
+                                    <div class="user-balance">@convert(auth()->user()->balance) <small class="currency currency-btc">Bal</small></div>
                                 </div>
                                 <a href="#" class="btn btn-white btn-icon btn-light"><em class="icon ni ni-line-chart"></em></a>
                             </div>
@@ -76,7 +75,6 @@
                                     <div class="user-account-main">
                                         <h6 class="overline-title-alt">Available Balance</h6>
                                         <div class="user-balance">@convert(auth()->user()->balance) <small class="currency currency-btc">USD</small></div>
-                                        <div class="user-balance-alt">{{ auth()->user()->showRate() }} <span class="currency currency-btc">BTC</span></div>
                                     </div>
                                     <a href="#" class="btn btn-icon btn-light"><em class="icon ni ni-line-chart"></em></a>
                                 </div>
