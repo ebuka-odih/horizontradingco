@@ -31,6 +31,55 @@
             </div>
         </div>
         <!-- END Hero -->
+        <div class="bg-sidebar-dark p-3 rounded push">
+            <!-- Toggle Navigation -->
+            <div class="d-lg-none">
+                <!-- Class Toggle, functionality initialized in Helpers.dmToggleClass() -->
+                <button type="button" class="btn w-100 btn-dark d-flex justify-content-between align-items-center" data-toggle="class-toggle" data-target="#horizontal-navigation-hover-centered-dark" data-class="d-none">
+                    Menu -
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+            <!-- END Toggle Navigation -->
+
+            <!-- Navigation -->
+            <div id="horizontal-navigation-hover-centered-dark" class="d-none d-lg-block mt-2 mt-lg-0">
+                <ul class="nav-main nav-main-horizontal nav-main-hover nav-main-horizontal-center nav-main-dark">
+                    <li class="nav-main-item">
+                        <a class="nav-main-link active" href="be_ui_navigation_horizontal.html">
+                            <i class="nav-main-link-icon fa fa-home"></i>
+                            <span class="nav-main-link-name">Overview</span>
+                        </a>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link active" href="be_ui_navigation_horizontal.html">
+                            <i class="nav-main-link-icon fa fa-arrow-down"></i>
+                            <span class="nav-main-link-name">Deposits</span>
+                        </a>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link active" href="be_ui_navigation_horizontal.html">
+                            <i class="nav-main-link-icon fa fa-arrow-up"></i>
+                            <span class="nav-main-link-name">Withdrawal</span>
+                        </a>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link active" href="be_ui_navigation_horizontal.html">
+                            <i class="nav-main-link-icon fa fa-rocket"></i>
+                            <span class="nav-main-link-name">Investment</span>
+                        </a>
+                    </li>
+                    <li class="nav-main-item">
+                        <a class="nav-main-link active" href="be_ui_navigation_horizontal.html">
+                            <i class="nav-main-link-icon fa fa-money-bill"></i>
+                            <span class="nav-main-link-name">Fundings</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- END Navigation -->
+        </div>
 
         <!-- Page Content -->
         <div class="content content-full content-boxed">
@@ -38,6 +87,26 @@
             <h2 class="content-heading">
                 <i class="si si-users me-1"></i> User Details
             </h2>
+            <table class="table table-striped">
+                <tr>
+                    <th>Deposits:</th>
+                    <td>${{ $deposits ? : '0.00' }}</td>
+                </tr>
+                <tr>
+                    <th>Withdrawal:</th>
+                    <td>${{ $withdraw ? : '0.00' }}</td>
+                </tr>
+                <tr>
+                    <th>Investments:</th>
+                    <td>${{ $investment ? : '0.00' }}</td>
+                </tr>
+                <tr>
+                    <th>Fundings:</th>
+                    <td>${{ $fundings ? : '0.00' }}</td>
+                </tr>
+
+
+            </table>
             <table class="table table-striped" style="width:100%">
                 <tr>
                     <th>Name:</th>

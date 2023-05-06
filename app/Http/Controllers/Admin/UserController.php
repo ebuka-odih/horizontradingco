@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Deposit;
+use App\Withdraw;
+use App\Investment;
+use App\Funding;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -18,7 +22,11 @@ class UserController extends Controller
     public function userDetails($id)
     {
         $user = User::findOrFail($id);
-        return view('admin.user.personal', compact('user'));
+        $deposits = Deposit::where('user_id', $user->id)->select('amount')->sum('amount');
+        $withdraw = Withdraw::where('user_id', $user->id)->select('amount')->sum('amount');
+        $investment = Investment::where('user_id', $user->id)->select('amount')->sum('amount');
+        $fundings = Funding::where('user_id', $user->id)->select('amount')->sum('amount');
+        return view('admin.user.personal', compact('user', 'deposits', 'withdraw', 'investment', 'fundings'));
     }
 
     public function deleteUser($id)
