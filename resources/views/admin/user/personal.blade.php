@@ -46,19 +46,19 @@
             <div id="horizontal-navigation-hover-centered-dark" class="d-none d-lg-block mt-2 mt-lg-0">
                 <ul class="nav-main nav-main-horizontal nav-main-hover nav-main-horizontal-center nav-main-dark">
                     <li class="nav-main-item">
-                        <a class="nav-main-link active" href="be_ui_navigation_horizontal.html">
+                        <a class="nav-main-link active" href="{{ route('admin.userDetails', $user->id) }}">
                             <i class="nav-main-link-icon fa fa-home"></i>
                             <span class="nav-main-link-name">Overview</span>
                         </a>
                     </li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link active" href="be_ui_navigation_horizontal.html">
+                        <a class="nav-main-link active" href="{{ route('admin.userDeposits', $user->id) }}">
                             <i class="nav-main-link-icon fa fa-arrow-down"></i>
                             <span class="nav-main-link-name">Deposits</span>
                         </a>
                     </li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link active" href="be_ui_navigation_horizontal.html">
+                        <a class="nav-main-link active" href="{{ route('admin.userWithdrawal', $user->id) }}">
                             <i class="nav-main-link-icon fa fa-arrow-up"></i>
                             <span class="nav-main-link-name">Withdrawal</span>
                         </a>

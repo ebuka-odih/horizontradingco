@@ -28,6 +28,18 @@ class UserController extends Controller
         $fundings = Funding::where('user_id', $user->id)->select('amount')->sum('amount');
         return view('admin.user.personal', compact('user', 'deposits', 'withdraw', 'investment', 'fundings'));
     }
+    public function userDeposits($id)
+    {
+        $user = User::findOrFail($id);
+        $deposits = Deposit::where('user_id', $user->id)->get();
+        return view('admin.user.user-deposits', compact('user', 'deposits'));
+    }
+    public function userWithdrawal($id)
+    {
+        $user = User::findOrFail($id);
+        $withdrawal = Withdraw::where('user_id', $user->id)->get();
+        return view('admin.user.user-withdraw', compact('user', 'withdrawal'));
+    }
 
     public function deleteUser($id)
     {
