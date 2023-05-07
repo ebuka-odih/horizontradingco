@@ -81,6 +81,7 @@
             <!-- END Navigation -->
         </div>
         <br><br>
+        <h4 class="text-center">{{ $user->fullname() }} Withdrawal</h4>
 
 
         <div class="content content-full content-boxed">
