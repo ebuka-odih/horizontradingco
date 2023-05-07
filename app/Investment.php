@@ -21,7 +21,7 @@ class Investment extends Model
     }
     public function getEndDateAttribute()
     {
-        $date = Carbon::parse($this->approved_date);
+        $date = Carbon::parse($this->updated_at);
         return $date->addDays(optional($this->package)->term_days - 1);
     }
 
@@ -70,6 +70,14 @@ class Investment extends Model
         }else{
             return "<span class='badge badge-warning text text-uppercase'>Canceled</span>";
         }
+    }
+    public function adminStatus()
+    {
+        if (Carbon::now() > $this->ending_date())
+        {
+            return "<span class='badge bg-primary text text-uppercase'>Ended</span>";
+        }
+        return "<span class='badge bg-success text text-uppercase'>Running</span>";
     }
 
 

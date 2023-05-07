@@ -147,7 +147,7 @@
                         </a>
                     </li>
                     <li class="nav-main-item">
-                        <a class="nav-main-link nav-main"  href="#">
+                        <a class="nav-main-link nav-main"  href="{{ route('admin.investment') }}">
                             <i class="nav-main-link-icon fa fa-wallet"></i>
                             <span class="nav-main-link-name">Investment</span>
                         </a>

@@ -45,5 +45,7 @@ Route::group(['middleware' => ['auth', 'verified', 'admin'], 'prefix' => 'admin'
 
     Route::resource('wallet', "Admin\PaymentMethodController");
 
+    Route::get('investments', "Admin\AdminInvestment@investments")->name('investment');
+    Route::get('investment/details/{id}', "Admin\AdminInvestment@investmentDetails")->name('investmentDetails');
 
 });
