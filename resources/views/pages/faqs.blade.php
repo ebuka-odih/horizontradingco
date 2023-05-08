@@ -68,7 +68,7 @@
                             </div>
                             <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                                 <div class="panel-body">
-                                    <p>We accept Bitcoin, Ethereum, USDT, Doge-Coin, BNB-Coin and many other cryptocurrency. </p>
+                                    <p>We accept BITCOIN, ETHEREUM, USDT, DOGECOIN, BNBCOIN and many other cryptocurrency. </p>
                                 </div>
                             </div>
                         </div>
