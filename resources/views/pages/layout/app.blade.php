@@ -316,15 +316,8 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="footer-col last-col">
-                        <h5>NEWSLETTER</h5>
-                        <p>Suscribe to our newsletter and get the lastest scoop right to your inbox!</p>
-                        <div class="newsletter-box">
-                            <form  action="#" method="post" name="sign-up"><input type="hidden" name="form_id" value="16505203773043"><input type="hidden" name="form_token" value="d4ba86517209195a3af61c6d2178fd9b">
-                                <input type="email" class="input" id="email" name="email" placeholder="Your email address" required>
-                                <input type="submit" class="button" id="submit" value="SIGN UP">
-                            </form>
-                        </div>
-                        <p class="cursive">Your email is safe with us, we don't spam.</p>
+                        <h5>Address</h5>
+                       <p>69 W 45th St #39A, New York, NY 10036</p>
                     </div>
                 </div>
             </div>
