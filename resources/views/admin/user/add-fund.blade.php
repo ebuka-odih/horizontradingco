@@ -55,7 +55,6 @@
                                     <label class="form-label"  for="example-email-input">Wallet</label>
                                     <select name="type" id="" class="form-control ">
                                         <option disabled selected>Select Wallet</option>
-                                        <option value="balance">Main Bal</option>
                                         <option value="btc_balance">BTC Bal</option>
                                         <option value="usdt_balance">USDT Bal</option>
                                         <option value="eth_balance">ETH Bal</option>

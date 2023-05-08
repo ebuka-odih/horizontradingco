@@ -29,6 +29,6 @@ class ApproveDeposit extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.approveDeposit');
+        return $this->view('emails.approveDeposit');
     }
 }

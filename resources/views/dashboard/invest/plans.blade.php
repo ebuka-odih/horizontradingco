@@ -95,10 +95,6 @@
                                 @endif
                                 <div class="form-control-group ">
                                     <label for="">
-                                        <input type="radio" name="balance" value="balance">
-                                        Spend funds Main Balance ($@convert(auth()->user()->balance))
-                                    </label><br>
-                                    <label for="">
                                         <input type="radio" name="balance" value="btc_balance">
                                         Spend funds from Bitcoin ($@convert(auth()->user()->btc_balance))
                                     </label>

@@ -37,10 +37,48 @@
                                             <td>${{ $deposit->amount }}</td>
                                         </tr>
                                         <tr>
+                                            <th>Status:</th>
+                                            <td>{!! $deposit->adminStatus() !!}</td>
+                                        </tr>
+                                        <tr>
                                             <th>Reference:</th>
                                             <td>{{ $deposit->reference ? : "Null" }}</td>
                                         </tr>
                                     </table>
+                                    <form action="{{ route('admin.approve_deposit', $deposit->id)}}" method="POST">
+                                        @csrf
+                                        @if(session()->has('success'))
+                                            <div class="alert alert-success">
+                                                {{ session()->get('success') }}
+                                            </div>
+                                        @endif
+                                        @if(session()->has('declined'))
+                                            <div class="alert alert-danger">
+                                                {{ session()->get('declined') }}
+                                            </div>
+                                        @endif
+                                        <input type="hidden" name="deposit_id" value="{{ $deposit->id }}">
+                                        <div class="col-lg-6 col-xl-6">
+                                            <h4 class="text-danger text-center">Select which wallet the deposit should be sent to</h4>
+                                            <div class="mb-4">
+                                                <label class="form-label"  for="example-email-input">Wallet</label>
+                                                <select name="type" id="" class="form-control ">
+                                                    <option disabled selected>Select Wallet</option>
+                                                    <option value="btc_balance">BTC Bal</option>
+                                                    <option value="usdt_balance">USDT Bal</option>
+                                                    <option value="eth_balance">ETH Bal</option>
+                                                    <option value="doge_balance">Doge Bal</option>
+                                                    <option value="profit">Profit Bal</option>
+                                                    <option value="ref_bonus">Referral Bal</option>
+                                                    {{--                                        <option value="Profit">Profit</option>--}}
+                                                </select>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <button type="submit" class="btn btn-success">Approve <i class="fa fa-check"></i></button>
+                                            </div>
+                                        </div>
+                                    </form>
+
 
                                 </div>
                             </div>

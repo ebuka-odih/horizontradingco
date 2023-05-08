@@ -54,9 +54,7 @@
                                                             <a href="{{ route('admin.view_deposit', $item->id) }}" class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="View Deposit" data-bs-original-title="View">
                                                                 <i class="fa fa-eye"></i>
                                                             </a>
-                                                            <a href="{{ route('admin.approve_deposit', $item->id) }}" class="btn btn-sm btn-alt-secondary js-bs-tooltip-enabled" data-bs-toggle="tooltip" title="Approve Deposit" data-bs-original-title="Approve">
-                                                                <i class="fa fa-check"></i>
-                                                            </a>
+
                                                             {{--                                                    <a href="{{ route('admin.approve_deposit', $item->id) }}" class="btn btn-sm btn-success mb-1">Approve</a>--}}
                                                         @else
                                                         @endif
