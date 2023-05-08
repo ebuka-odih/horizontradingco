@@ -75,8 +75,8 @@
                                     <div class="card-inner">
                                         <div class="nk-wg7">
                                             <div class="nk-wg7-stats">
-                                                <div class="nk-wg7-title">Available balance in USD</div>
-                                                <div class="number-lg amount">@convert(auth()->user()->balance)</div>
+                                                <div class="nk-wg7-title">Total balance</div>
+                                                <div class="number-lg amount">@convert(auth()->user()->balance())</div>
                                             </div>
                                             <div class="nk-wg7-stats-group">
                                                 <div class="nk-wg7-stats w-50">

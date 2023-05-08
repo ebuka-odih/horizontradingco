@@ -110,16 +110,12 @@ class User extends Authenticatable
         return '/storage/avatar/' . $this->attributes['avatar'];
     }
 
-    public function showRate()
-    {
-        $currency = Currency::convert()
-            ->from('USD')
-            ->to('BTC')
-            ->source('crypto')
-            ->round(7)
-            ->get();
-        return floor($currency * $this->balance);
-    }
+   public function balance()
+   {
+       $balance = $this->btc_balance + $this->usdt_balance + $this->doge_balance
+           + $this->eth_balance + $this->profit + $this->ref_bonus;
+       return $balance;
+   }
 
 
 }

@@ -27,6 +27,7 @@ class Controller extends BaseController
 
                 if($current_date->isoFormat('MMMM Do YYYY') == $d_ended->isoFormat('MMMM Do YYYY')){
                     $user->profit += $deposit_detail->earning;
+                    $user->balance += $deposit_detail->earning;
                     $user->save();
                     $deposit_detail->completed = true;
                     $deposit_detail->save();

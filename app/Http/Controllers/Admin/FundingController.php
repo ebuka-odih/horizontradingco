@@ -22,11 +22,7 @@ class FundingController extends Controller
         $data['user_id'] = $request->user_id;
         $data['status'] = 1;
         $data = Funding::create($data);
-        if ($request->type == 'balance'){
-            $user = User::findOrFail($data->user_id);
-            $user->balance += $request->amount;
-            $user->save();
-        }elseif($request->type == 'btc_balance')
+        if($request->type == 'btc_balance')
         {
             $user = User::findOrFail($data->user_id);
             $user->btc_balance += $request->amount;
