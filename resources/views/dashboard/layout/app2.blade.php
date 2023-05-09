@@ -145,8 +145,7 @@
                                     </div>
                                     <div class="dropdown-inner user-account-info">
                                         <h6 class="overline-title-alt">Account Balance</h6>
-                                        <div class="user-balance">@convert(auth()->user()->balance) <small class="currency currency-btc">USD</small></div>
-                                        <div class="user-balance-alt">{{ auth()->user()->showRate() }} <span class="currency currency-btc">BTC</span></div>
+                                        <div class="user-balance">@convert(auth()->user()->balance()) <small class="currency currency-btc">USD</small></div>
                                     </div>
                                     <div class="dropdown-inner">
                                         <ul class="link-list">
