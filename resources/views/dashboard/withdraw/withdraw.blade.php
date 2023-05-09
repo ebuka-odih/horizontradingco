@@ -33,7 +33,7 @@
                                     </ul>
                                 </div>
                             @endif
-                            
+
 
                             <div class="buysell-field form-group">
                                 <div class="form-label-group">
@@ -52,6 +52,25 @@
                             </div><!-- .buysell-field -->
                             <div class="buysell-field form-group">
                                 <div class="form-label-group">
+                                    <label class="form-label">Withdrawal Wallet</label>
+                                </div>
+
+                                <div class="form-pm-group">
+                                    <select name="wallet" id="form-label"  class="form-control form-control-lg" required>
+                                            <option disabled selected>Select Wallet</option>
+                                            <option value="btc_balance">BTC Bal</option>
+                                            <option value="usdt_balance">USDT Bal</option>
+                                            <option value="eth_balance">ETH Bal</option>
+                                            <option value="doge_balance">Doge Bal</option>
+                                            <option value="profit">Profit Bal</option>
+                                            <option value="ref_bonus">Referral Bal</option>
+                                    </select>
+                                    <small class="text-danger">Note: Select the wallet to withdraw from</small>
+                                </div>
+
+                            </div>
+                            <div class="buysell-field form-group">
+                                <div class="form-label-group">
                                     <label class="form-label">Payment Method</label>
                                 </div>
 
@@ -64,7 +83,8 @@
                                         </select>
                                     </div>
 
-                            </div><!-- .buysell-field -->
+                            </div>
+                            <!-- .buysell-field -->
                             <div class="buysell-field form-action">
                                 <button class="btn btn-lg btn-block btn-primary" type="submit">Continue to Withdraw</button>
                             </div><!-- .buysell-field -->

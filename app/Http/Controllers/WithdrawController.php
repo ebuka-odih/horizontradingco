@@ -24,7 +24,7 @@ class WithdrawController extends Controller
     {
         $w_method = WithdrawMethod::whereUserId(auth()->id())->get();
 
-        if (count($w_method) > 0 && \auth()->user()->balance > 0){
+        if (count($w_method) > 0 && \auth()->user()->balance() > 0){
             return view('dashboard.withdraw.withdraw', compact('w_method'));
         }elseif(count($w_method) < 1){
             return view('dashboard.withdraw.notice2');
@@ -42,6 +42,7 @@ class WithdrawController extends Controller
         $withdraw = new Withdraw();
         if ($request->amount >= 50){
             $withdraw->amount = $request->amount;
+            $withdraw->wallet = $request->wallet;
             $withdraw->user_id = Auth::id();
             $withdraw->withdraw_method_id = $request->withdraw_method_id;
             $user = User::findOrFail($withdraw->user_id);
