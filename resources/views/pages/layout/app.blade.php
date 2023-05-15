@@ -205,8 +205,8 @@
 <div class="container my-0 mt-2 d-none d-lg-block">
     <nav class="navbar navbar-expand-lg navbar-dark">
         <a href="{{  route('index') }}" class="nav-brand">
-            <h2 style="font-weight: bolder; color: white">HorizontradingCo</h2>
-{{--            <img src="{{ asset('img/logo.jpeg') }}" alt="" style="height:145px;background-color:white;border-radius:20px"  class="img-fluid">--}}
+{{--            <h2 style="font-weight: bolder; color: white">HorizontradingCo</h2>--}}
+            <img src="{{ asset('img/logo.png') }}" alt="" style="height:145px;background-color:white;border-radius:20px"  class="img-fluid">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -290,7 +290,8 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="footer-col">
-                        <figure class="footer-logo">  <a href="#" class="nav-brand"><img src="logo3.png" alt="" style="height:45px;background-color:white;border-radius:20px"  class="img-fluid"></a></figure>
+                        <figure class="footer-logo">  <a href="#" class="nav-brand">
+                                <img src="logo.png" alt="" style="height:45px;background-color:white;border-radius:20px"  class="img-fluid"></a></figure>
                         <p>We are a digital assets trading and managment company, providing smart investment products to investors, who wish to create financial stabilty and security through secure investing. </p>
                     </div>
                 </div>
