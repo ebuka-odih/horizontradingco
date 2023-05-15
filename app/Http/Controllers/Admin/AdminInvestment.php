@@ -20,7 +20,7 @@ class AdminInvestment extends Controller
     public function investmentDetails($id)
     {
 
-        $deposit_detail = Investment::whereUserId(auth()->id())->findOrFail($id);
+        $deposit_detail = Investment::findOrFail($id);
         $investment_plan = Package::findOrFail($deposit_detail->package_id);
         $user = User::findOrFail($deposit_detail->user_id);
         $expected_profit = $investment_plan->total_return()  * $deposit_detail->amount;
