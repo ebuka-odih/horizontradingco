@@ -52,9 +52,9 @@
                                                     <td class="fw-semibold">{{ $item->user->fullname() }} (@convert($item->user['balance']))</td>
                                                     <td class="fw-semibold">$ {{ $item->amount }}</td>
                                                     {{--                                                <td class="d-none d-sm-table-cell"> {{ $item->withdraw_method->acctLabel() }}</td>--}}
-                                                    <td class="d-none d-sm-table-cell"> ${{ $item->earning }}</td>
-                                                    <td class="d-none d-sm-table-cell"> {!! $item->adminStatus() !!}</td>
-                                                    <td class="d-none d-sm-table-cell"> {{ date('d-M-y', strtotime($item->ending_date() )) }}</td>
+                                                    <td class="fw-semibold"> ${{ $item->earning }}</td>
+                                                    <td class="fw-semibold"> {!! $item->adminStatus() !!}</td>
+                                                    <td class="fw-semibold"> {{ date('d-M-y', strtotime($item->ending_date() )) }}</td>
                                                     <td>
                                                         <a href="{{ route('admin.investmentDetails', $item->id) }}"><i class="fa fa-eye"></i></a>
                                                         <form method="POST" action="{!! route('admin.delete_withdrawal', $item->id) !!}" accept-charset="UTF-8">
