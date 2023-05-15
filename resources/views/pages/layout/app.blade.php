@@ -48,6 +48,7 @@
     <!-- End of HubSpot Embed Code -->
 
     <script src="//code.jivosite.com/widget/5tCCVWktyu" async></script>
+
     <style>
         #google_translate_element {
 
@@ -168,16 +169,16 @@
     </script>
 </div>
 <!-- TradingView Widget END -->
-<div class=""><center>
+<div class="">
+    <center>
         <div id="google_translate_element"></div>
-
-        <script type="text/javascript">
+        <script>
             function googleTranslateElementInit() {
-                new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                new google.translate.TranslateElement({
+                    pageLanguage: 'en'
+                }, 'google_translate_element');
             }
         </script>
-
-        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     </center>
 </div>
@@ -251,7 +252,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="faqs">QUESTION GUIDE</a>
+                    <a class="nav-link text-white" href="{{ route('faqs') }}">QUESTION GUIDE</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="{{ route('login') }}">LOG IN</a>
@@ -373,6 +374,7 @@
         }
     }
 </script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <!-- Mirrored from forextradingcapitalltd.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 10 Nov 2022 20:51:26 GMT -->
 </html>

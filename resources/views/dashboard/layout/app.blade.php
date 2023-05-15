@@ -15,6 +15,35 @@
     <link id="skin-default" rel="stylesheet" href="{{ asset('client/assets/css/theme.css?ver=2.4.0') }}">
     <script src="//code.jivosite.com/widget/5tCCVWktyu" async></script>
 
+    <style>
+        #google_translate_element {
+
+            color: transparent;
+        }
+
+        #google_translate_element a {
+
+            display: none;
+        }
+
+        select.google_translate_element {
+
+            color: black;
+        }
+
+        div.goog-te-gadget {
+
+            color: transparent;
+        }
+
+        div.goog-te-gadget {
+
+            color: transparent !important;
+        }
+
+
+    </style>
+
 </head>
 
 <body class="nk-body npc-crypto bg-white has-sidebar ">
@@ -205,7 +234,6 @@
                                 }
                             </script>
 
-                            <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
                         </div>
                         <div class="nk-header-news d-none d-xl-block">
