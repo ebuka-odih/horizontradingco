@@ -48,7 +48,34 @@
     <!-- End of HubSpot Embed Code -->
 
     <script src="//code.jivosite.com/widget/5tCCVWktyu" async></script>
+    <style>
+        #google_translate_element {
 
+            color: transparent;
+        }
+
+        #google_translate_element a {
+
+            display: none;
+        }
+
+        select.google_translate_element {
+
+            color: black;
+        }
+
+        div.goog-te-gadget {
+
+            color: transparent;
+        }
+
+        div.goog-te-gadget {
+
+            color: transparent !important;
+        }
+
+
+    </style>
 
 </head>
 
@@ -299,7 +326,7 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i>  &nbsp; <a href="{{ route('index') }}">Home</a></li>
                             <li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i>  &nbsp; <a href="{{ route('about') }}">About us</a></li>
-                            <li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i>  &nbsp; <a href="{{ route('faq') }}">Faq</a></li>
+                            <li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i>  &nbsp; <a href="{{ route('faqs') }}">Faq</a></li>
                         </ul>
                     </div>
                 </div>
