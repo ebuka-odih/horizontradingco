@@ -244,9 +244,6 @@
     <nav class="navbar mobile_nav navbar-expand-lg navbar-dark">
         <a href="{{ route('index') }}" class="nav-brand">
             <img src="{{ asset('img/logo.png') }}" alt="" style="height:45px;border-radius:20px"  class="img-fluid">
-
-
-        {{--            <img src="logo3.png" alt="" style="height:45px;background-color:white;border-radius:20px" class="img-fluid">--}}
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -300,10 +297,9 @@
                     <div class="footer-col">
                         <h5>Links</h5>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i>  &nbsp; <a href="index-2.html">Home</a></li>
-                            <li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i>  &nbsp; <a href="about-us.html">About us</a></li>
-                            <li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i>  &nbsp; <a href="faqs.html">Faq</a></li>
-                            <li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i>  &nbsp; <a href="contact-us.html">Contact</a></li>
+                            <li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i>  &nbsp; <a href="{{ route('index') }}">Home</a></li>
+                            <li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i>  &nbsp; <a href="{{ route('about') }}">About us</a></li>
+                            <li class="list-group-item"><i class="fa fa-angle-right" aria-hidden="true"></i>  &nbsp; <a href="{{ route('faq') }}">Faq</a></li>
                         </ul>
                     </div>
                 </div>

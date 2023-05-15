@@ -122,7 +122,7 @@
 
                                 </div>
                                 <div class="form-note-group">
-                                    <span class="buysell-min form-note-alt">Account Balance $@convert(auth()->user()->balance)</span>
+                                    <span class="buysell-min form-note-alt">Account Balance $@convert(auth()->user()->balance())</span>
                                 </div>
                             </div>
 
