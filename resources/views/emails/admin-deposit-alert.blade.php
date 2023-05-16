@@ -1,4 +1,5 @@
 @component('mail::message')
+
 # Hello Admin
 
 A new deposit alert

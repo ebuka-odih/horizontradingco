@@ -27,8 +27,10 @@
                         <tr style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 14px; margin: 0;">
                             <td class="" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 16px; vertical-align: top; color: #fff; font-weight: 500; text-align: center; border-radius: 3px 3px 0 0; background-color: #0d3e6f; margin: 0; padding: 20px;"
                                 align="center" bgcolor="#71b6f9" valign="top">
-                                <a href="#" style="font-size:32px;color:#fff;"> {{ env('APP_NAME') }}</a>
-                                <img src="" alt="">
+                                <a href="#" style="font-size:32px;color:#fff;">
+                                    <img src="" alt="{{ asset('img/logo.png') }}">
+                                </a>
+
                                 <br>
                                 {{--                                <span style="margin-top: 10px;display: block;">Warning: You're approaching your limit. Please upgrade.</span>--}}
                             </td>
