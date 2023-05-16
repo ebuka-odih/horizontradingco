@@ -29,6 +29,6 @@ class DepositAlert extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.deposit-alert');
+        return $this->view('emails.deposit-alert');
     }
 }

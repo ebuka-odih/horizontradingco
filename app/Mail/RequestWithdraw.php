@@ -29,6 +29,6 @@ class RequestWithdraw extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.request_withdraw');
+        return $this->view('emails.request_withdraw');
     }
 }

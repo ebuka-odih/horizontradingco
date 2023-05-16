@@ -29,6 +29,6 @@ class FundingMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.fundingmail');
+        return $this->view('emails.fundingmail');
     }
 }

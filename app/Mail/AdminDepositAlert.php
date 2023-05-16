@@ -29,6 +29,6 @@ class AdminDepositAlert extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.admin-deposit-alert');
+        return $this->view('emails.admin-deposit-alert');
     }
 }

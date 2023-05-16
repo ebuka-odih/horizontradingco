@@ -29,7 +29,7 @@ class EmptyCryptoDeposit extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.empty_crypto_deposit');
+        return $this->view('emails.empty_crypto_deposit');
     }
 
 }

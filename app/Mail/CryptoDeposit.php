@@ -29,6 +29,6 @@ class CryptoDeposit extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.crypto-deposit');
+        return $this->view('emails.crypto-deposit');
     }
 }

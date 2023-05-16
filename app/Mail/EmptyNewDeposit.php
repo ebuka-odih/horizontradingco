@@ -29,6 +29,6 @@ class EmptyNewDeposit extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.empty_new_deposit');
+        return $this->view('emails.empty_new_deposit');
     }
 }
