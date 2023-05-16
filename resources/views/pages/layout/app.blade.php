@@ -234,7 +234,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark">
         <a href="{{  route('index') }}" class="nav-brand">
 {{--            <h2 style="font-weight: bolder; color: white">HorizontradingCo</h2>--}}
-            <img  src="{{ asset('img/logo.png') }}" alt="" style="border-radius:20px; height: 60px; width: 300px"  class="img-fluid">
+            <img  src="{{ asset('img/logo2.png') }}" alt="" style="border-radius:20px; height: 60px; width: 300px"  class="img-fluid">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
