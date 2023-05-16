@@ -344,6 +344,8 @@
                     <div class="footer-col last-col">
                         <h5>Address</h5>
                        <p>69 W 45th St #39A, New York, NY 10036</p>
+                        <h5>Email</h5>
+                       <a href="mailto:support@horizontradingco.com" class="text-white">support@horizontradingco.com</a>
                     </div>
                 </div>
             </div>
