@@ -271,7 +271,7 @@
 <div class="container px-0 my-0 mt-2 d-lg-none d-sm-block">
     <nav class="navbar mobile_nav navbar-expand-lg navbar-dark">
         <a href="{{ route('index') }}" class="nav-brand">
-            <img src="{{ asset('img/logo.png') }}" alt="" style="height:45px;border-radius:20px"  class="img-fluid">
+            <img src="{{ asset('img/logo2.png') }}" alt="" style="height:45px;border-radius:20px"  class="img-fluid">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -317,7 +317,7 @@
                 <div class="col-lg-4">
                     <div class="footer-col">
                         <figure class="footer-logo">  <a href="#" class="nav-brand">
-                                <img src="{{ asset('img/logo.png') }}" alt="" style="height:45px;border-radius:20px"  class="img-fluid"></a></figure>
+                                <img src="{{ asset('img/logo2.png') }}" alt="" style="height:45px;border-radius:20px"  class="img-fluid"></a></figure>
                         <p>We are a digital assets trading and management company, providing smart investment products to investors, who wish to create financial stabilty and security through secure investing. </p>
                     </div>
                 </div>

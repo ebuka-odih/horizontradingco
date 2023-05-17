@@ -228,7 +228,7 @@
                                 <span class="nio-version">Crypto</span>
                             </a>
                             <div id="google_translate_element"></div>
-                            
+
                             <script>
                                 function googleTranslateElementInit() {
                                     new google.translate.TranslateElement({
