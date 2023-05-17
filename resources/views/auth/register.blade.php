@@ -27,7 +27,7 @@
                 <div class="nk-block nk-block-middle nk-auth-body  wide-xs">
                     <div class="brand-logo pb-4 text-center">
                         <a href="/" class="logo-link">
-                            <img class="logo-img logo-img-lg" src="{{ asset('img/logo.png') }}" srcset="{{ asset('img/logo.png') }} 2x" alt="logo">
+                            <img class="logo-img logo-img-lg" src="{{ asset('img/logo2.png') }}" srcset="{{ asset('img/logo.png') }} 2x" alt="logo">
 
                             {{--                            <img class="logo-light logo-img logo-img-lg" src="./images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">--}}
                             {{--                            <img class="logo-dark logo-img logo-img-lg" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">--}}
