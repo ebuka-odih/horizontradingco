@@ -28,6 +28,6 @@ class AdminWithdrawAlert extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.admin_withdraw_alart');
+        return $this->markdown('emails.admin_withdraw_alart');
     }
 }
