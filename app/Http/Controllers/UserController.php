@@ -35,7 +35,7 @@ class UserController extends Controller
 
     public function all_referrals()
     {
-        return view('dashboard.referral');
+        return view('dashboard.user.referral');
     }
 
     public function profile()

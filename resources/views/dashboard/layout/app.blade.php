@@ -187,10 +187,10 @@
                                         <span class="nk-menu-text">My Profile</span>
                                     </a>
                                 </li>
-                                <li class="nk-menu-heading">
-                                    <a href="e67">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-help-alt"></em></span>
-                                        <span class="nk-menu-text">Support</span>
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('user.all_referrals') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-users-fill"></em></span>
+                                        <span class="nk-menu-text">Referrals</span>
                                     </a>
                                 </li>
                                 <li class="nk-menu-heading">
@@ -288,6 +288,7 @@
                                                 <li><a class="dark-switch" href="#"><em class="icon ni ni-moon"></em><span>Dark Mode</span></a></li>
                                             </ul>
                                         </div>
+
                                         <div class="dropdown-inner">
                                             <ul class="link-list">
                                                 <li>
