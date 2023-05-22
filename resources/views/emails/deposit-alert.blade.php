@@ -31,7 +31,7 @@
                             <td class="" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 16px; vertical-align: top; color: #fff; font-weight: 500; text-align: center; border-radius: 3px 3px 0 0; background-color: #0d3e6f; margin: 0; padding: 20px;"
                                 align="center" bgcolor="#71b6f9" valign="top">
                                 <a href="#" style="font-size:32px;color:#fff;">
-                                    <img style="height: 50px; width: 50px" src="https://horizontradingco.com/img/logo2.png" alt="https://horizontradingco.com/img/logo.png">
+                                    <img style="height: 80px; width: 300px" src="https://horizontradingco.com/img/logo2.png" alt="https://horizontradingco.com/img/logo.png">
                                 </a>
 
                                 <br>

@@ -28,7 +28,7 @@
                             <td class="" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size: 16px; vertical-align: top; color: #fff; font-weight: 500; text-align: center; border-radius: 3px 3px 0 0; background-color: #0d3e6f; margin: 0; padding: 20px;"
                                 align="center" bgcolor="#71b6f9" valign="top">
                                 <a href="{{  route('index') }}" class="nav-brand">
-                                    <img  src="{{ asset('img/logo.png') }}" alt="" style="border-radius:20px; height: 60px; width: 300px"  class="img-fluid">
+                                    <img style="height: 80px; width: 300px"  src="{{ asset('img/logo.png') }}" alt="" style="border-radius:20px; height: 60px; width: 300px"  class="img-fluid">
                                 </a>
                                 <br>
                                 {{--                                <span style="margin-top: 10px;display: block;">Warning: You're approaching your limit. Please upgrade.</span>--}}
