@@ -115,7 +115,7 @@
                                 </div>
 
                                 <div class="form-control-group ">
-                                    <input type="text" class="form-control form-control-lg form-control-number" id="buysell-amount" name="amount" placeholder="100">
+                                    <input type="number" class="form-control form-control-lg form-control-number" id="buysell-amount" name="amount" placeholder="100">
                                     <div class="form-dropdown">
                                         <div class="text">USD</div>
                                     </div>

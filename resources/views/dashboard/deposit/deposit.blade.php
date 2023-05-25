@@ -34,7 +34,7 @@
                                 <label class="form-label" for="buysell-amount">Amount to Deposit</label>
                             </div>
                             <div class="form-control-group">
-                                <input type="text" class="form-control form-control-lg form-control-number" id="buysell-amount" required name="amount" placeholder="100.00">
+                                <input type="number" class="form-control form-control-lg form-control-number" id="buysell-amount" required name="amount" placeholder="100.00">
                                 <div class="form-dropdown">
                                     <div class="text">USD</div>
                                 </div>
