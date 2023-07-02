@@ -54,6 +54,7 @@ class AdminController extends Controller
         $user->balance -= $request->amount;
         $user->save();
         return redirect()->back()->with('defund', "account defunded successfully");
+    
     }
 
 }

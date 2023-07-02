@@ -46,7 +46,7 @@
                                             @foreach($deposits as $item)
                                                 <tr class="odd">
                                                     <td class="fw-semibold"> {{ date('d-M-y', strtotime($item->created_at)) }}</td>
-                                                    <td class="fw-semibold">{{ $item->user->fullname() }} (@convert($item->user['balance']))</td>
+                                                    <td class="fw-semibold">{{ optional($item->user)->firstname.''.optional($item->user)->lastname }} (@convert($item->user['balance']))</td>
                                                     <td class="fw-semibold">$ {{ $item->amount }}</td>
                                                     <td class="fw-semibold"> {!! $item->adminStatus() !!}</td>
                                                     <td class="fw-semibold">
