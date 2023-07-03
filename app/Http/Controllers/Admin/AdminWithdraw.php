@@ -28,7 +28,7 @@ class AdminWithdraw extends Controller
 
         $withdraw = Withdraw::findOrFail($id);
         $user = User::findOrFail($withdraw->user_id);
-        return $withdraw;
+        return $user;
         if ($withdraw->wallet == 'btc_balance')
         {
             $user->btc_balance -= $withdraw->amount;
