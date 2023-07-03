@@ -49,7 +49,7 @@
                                             @foreach($investments as $item)
                                                 <tr class="odd">
                                                     <td class="fw-semibold"> {{ date('d-M-y', strtotime($item->updated_at)) }}</td>
-                                                    <td class="fw-semibold">{{ $item->user->fullname() }} (@convert($item->user['balance']))</td>
+                                                    <td class="fw-semibold">{{ optional($item->user)->fullname() }} ({{ optional($item->user)->balance }})</td>
                                                     <td class="fw-semibold">$ {{ $item->amount }}</td>
                                                     {{--                                                <td class="d-none d-sm-table-cell"> {{ $item->withdraw_method->acctLabel() }}</td>--}}
                                                     <td class="fw-semibold"> ${{ $item->earning }}</td>
